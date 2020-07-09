@@ -1,3 +1,7 @@
+header .masthead .container div h1 {
+    font-family: 'Great Vibes' cursive;
+}
+
 #main_page_bg {
     background-image: url('static/images/misc/main_page.png');
 }
