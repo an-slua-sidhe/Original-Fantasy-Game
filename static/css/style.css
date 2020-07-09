@@ -1,7 +1,39 @@
-header .masthead .container div h1 {
-    font-family: 'Great Vibes' cursive;
+/* Navbar  */
+
+.nav-link {
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
-#main_page_bg {
-    background-image: url('static/images/misc/main_page.png');
+/* Main Page */
+#logo {
+    font-size: 2em;
+    margin-bottom: 6em;
+}
+
+#logo p {
+    color: #fff;
+}
+
+#new-game-btn {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* My Own Targeted Media Queries */
+@media (min-width: 992px) {
+    #new-game-btn {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 991px) {
+    #logo p {
+        font-size: .8em;
+    }
 }

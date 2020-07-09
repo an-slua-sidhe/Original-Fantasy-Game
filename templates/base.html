@@ -2,44 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A Browser-based Adventure Game" />
+    <meta name="author" content="Paul Quinn" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/grayscale.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-    <link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='images/favicon.png')}}">
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 
-    <title>Original Fantasy Game™</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="/static/css/grayscale.css" rel="stylesheet" />
+
+    <!-- My Targeted CSS Styles -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="/static/images/misc/favicon.png" />
+
+    <title>Original Fantasy Game&trade;</title>
 </head>
 
-<body>
-    <header>
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger d-none d-md-block" href="#page-top">Original Fantasy
+                Game&trade;</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item d-md-none"><a class="nav-link js-scroll-trigger" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">New Character</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Saved Characters</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">List of Classes</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">List of Races</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">New Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    </header>
+    <!-- Code for  Template Routing -->
 
-    <div class="container">
-        {% block content %} {% endblock %}
-    </div>
-    <footer>
+        {% block content %}
 
+        {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container">Original Fantasy Game&trade; 2020</div>
     </footer>
 
-    <!-- JavaScript -->
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-
+    <!-- Bootstrap core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="/static/js/grayscale.js"></script>
 </body>
 
 </html>
