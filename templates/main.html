@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- Masthead (Should Possibly Be in main.html?) -->
+<!-- Masthead -->
 <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
@@ -10,8 +10,7 @@
                 <p>(Such an...)</p>
                 <h1 class="mx-auto my-0 text-uppercase"><strong>Original Fantasy Game&trade;</strong></h1>
             </div>
-            <!-- <h2 class="text-white-50 mx-auto mt-2 mb-5">Text</h2> -->
-            <a id="new-game-btn" class="btn btn-primary js-scroll-trigger" href="#">Start a New Game!</a>
+              <a class="ui-choice-btn btn btn-primary mx-1 js-scroll-trigger" href="{{ url_for('new_game') }}">Start a New Game!</a>
         </div>
     </div>
 </header>

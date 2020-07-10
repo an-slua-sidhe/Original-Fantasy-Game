@@ -10,8 +10,18 @@ app = Flask(__name__)
 # mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/main_page')
 def main_page():
     return render_template("main.html")
+
+@app.route('/new_game')
+def new_game():
+    return render_template("new_game.html")
+
+@app.route('/get_classes')
+def get_classes():
+    return render_template("classes_list.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Masthead -->
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="row text-center mx-auto">
+            <div class="query-text col-12">
+                <h1 class="mx-auto my-0 mx-2 text-uppercase"><strong>List of Classes</strong>
+                </h1>
+            </div>
+
+            <!-- <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="preset-class col-12 col-md-4">
+                            <div>
+                                <img class="img-fluid" src="/static/images/profiles/elf_warrior_f.jpg"
+                                    alt="Warrior Example" />
+                            </div>
+                            <div>
+                                <h2>WARRIOR</h2>
+                                <p>Info:</p>
+                                <p>The warrior is obviously strong etc.</p>
+
+                                <p>Starting Stats:</p>
+                                <p>Stamina: +2</p>
+                                <p>Intelligence: -2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="query-text col-12">
+                <h2 class="mx-auto mt-2 mb-5">What would you like to do?</h2>
+            </div> -->
+
+            <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('main_page') }}">Go to Home Screen</a></div>
+
+            <div class="col-12 col-md-6"><a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('main_page') }}">Create a New Class</a></div>
+        </div>
+    </div>
+</header>
+
+<!-- Classes -->
+<div id="classes-container">
+    <section class="projects-section" id="projects">
+        <div class="container">
+
+            <!-- Preset Class one: The Warrior-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="profile-img col-lg-6"><img class="img-fluid" src="/static/images/profiles/elf_warrior_f_cropped.jpg"
+                        alt="Image of the Warrior" />
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">The Warrior</h4>
+                                <p class="mb-0 text-white-50">
+                                    The warrior is obviously strong and does this and that and the other thing. It is
+                                    know that etc.
+                                </p>
+                                <hr class="d-none d-lg-block mt-2 mb-2 ml-0" />
+                                <h4 class="text-white">Starting Stats:</h4>
+                                <p class="mb-0 text-white-50">Stamina: +2</p>
+                                <p class="mb-0 text-white-50">Intelligence: -2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Preset Class one: The Assassin -->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6"><img class="img-fluid" src="/static/images/profiles/pix_assassin_f_cropped.jpg"
+                        alt="Image of the Assassin" />
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">The Assassin</h4>
+                                <p class="mb-0 text-white-50">
+                                    The assassin is a very
+                                    sneaky person indeed, and never does this and that etc
+                                </p>
+                                <hr class="d-none d-lg-block mt-2 mb-2 mr-0" />
+                                <h4 class="text-white">Starting Stats:</h4>
+                                <p class="mb-0 text-white-50">Stamina: +1</p>
+                                <p class="mb-0 text-white-50">Intelligence: +1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preset Class one: The Mage-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="profile-img col-lg-6"><img class="img-fluid" src="/static/images/profiles/orc_mage_f_cropped.jpg"
+                        alt="Image of the Mage" />
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">The Mage</h4>
+                                <p class="mb-0 text-white-50">
+                                    The mage is an august and long-winded individual etc.
+                                </p>
+                                <hr class="d-none d-lg-block mt-2 mb-2 ml-0" />
+                                <h4 class="text-white">Starting Stats:</h4>
+                                <p class="mb-0 text-white-50">Intelligence: +2</p>
+                                <p class="mb-0 text-white-50">Stamina: -2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}

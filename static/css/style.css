@@ -1,3 +1,5 @@
+/* base.html Styles */
+
 /* Navbar  */
 
 .nav-link {
@@ -8,26 +10,58 @@
     -o-transition: all 0.5s ease-in-out;
 }
 
+body #block-content-container {
+    margin: 0;
+    padding: 0;
+}
+
+/* .ui-choice-btn {
+    margin: 0 1em;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+} */
+
+/* General Styles */
+
+.masthead .container .query-text {
+    margin-bottom: 4em;
+}
+
+.masthead .container .query-text h1 strong {
+    font-size: 0.7em;
+}
+
+.profile-img {
+    height: 50%;
+    image-orientation: inherit;
+}
+
 /* Main Page */
 #logo {
     font-size: 2em;
-    margin-bottom: 6em;
+    margin-bottom: 5em;
 }
 
 #logo p {
     color: #fff;
 }
 
-#new-game-btn {
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
+
+/* New Game Page */
+
+
+/* List of Classes Page */
+
+#classes-container {
+    margin: 0;
+    padding: 0;
 }
 
 /* My Own Targeted Media Queries */
 @media (min-width: 992px) {
-    #new-game-btn {
+    .ui-choice-btn {
         font-size: 1.5em;
     }
 }

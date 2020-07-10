@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="A Browser-based Adventure Game" />
     <meta name="author" content="Paul Quinn" />
 
@@ -19,13 +19,13 @@
         rel="stylesheet" />
 
     <!-- Core theme CSS (includes Bootstrap) -->
-    <link href="/static/css/grayscale.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/grayscale.css') }}" rel="stylesheet" />
 
     <!-- My Targeted CSS Styles -->
-    <link href="/static/css/style.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
 
     <!-- Favicon Link -->
-    <link rel="icon" type="image/x-icon" href="/static/images/misc/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/misc/favicon.png') }}" />
 
     <title>Original Fantasy Game&trade;</title>
 </head>
@@ -34,7 +34,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger d-none d-md-block" href="#page-top">Original Fantasy
+            <a class="navbar-brand js-scroll-trigger d-none d-md-block" href="{{ url_for('main_page') }}">Original
+                Fantasy
                 Game&trade;</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -44,24 +45,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item d-md-none"><a class="nav-link js-scroll-trigger" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">New Character</a>
+                    <li class="nav-item d-md-none"><a class="nav-link js-scroll-trigger"
+                            href="{{ url_for('main_page') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('main_page') }}">New
+                            Character</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Saved Characters</a>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('main_page') }}">Saved
+                            Characters</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">List of Classes</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">List of Races</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">New Game</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('get_classes') }}">List of
+                            Classes</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('main_page') }}">List of
+                            Races</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('new_game') }}">New
+                            Game</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Code for  Template Routing -->
-
+    <div id="block-content-container">
         {% block content %}
 
         {% endblock %}
+    </div>
 
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
