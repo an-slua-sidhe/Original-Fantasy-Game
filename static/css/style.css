@@ -33,10 +33,6 @@ body #block-content-container {
     font-size: 0.7em;
 }
 
-.profile-img {
-    height: 50%;
-    image-orientation: inherit;
-}
 
 /* Main Page */
 #logo {
@@ -54,10 +50,18 @@ body #block-content-container {
 
 /* List of Classes Page */
 
+#classes-masthead .masthead {
+    height: 50vh;
+    padding: 5em 0;
+}
+
+@media (max-width: 991px) {}
+
 #classes-container {
     margin: 0;
     padding: 0;
 }
+
 
 /* My Own Targeted Media Queries */
 @media (min-width: 992px) {
@@ -67,7 +71,48 @@ body #block-content-container {
 }
 
 @media (max-width: 991px) {
+
+    /* General Styles */
+    #logo {
+        margin-bottom: 4em;
+    }
+
     #logo p {
         font-size: .8em;
+    }
+
+    .masthead .container .query-text {
+        margin-bottom: 3em;
+    }
+
+    /* List of Classes Page */
+    #classes-masthead .masthead {
+        height: 30vh;
+        padding: 2em 0;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    /* List of Classes Page */
+    #classes-masthead .masthead {
+        min-height: 25em;
+    }
+
+    #classes-container {
+        margin-top: -3em;
+    }
+}
+
+@media (max-width: 359px) {
+    #logo {
+        margin-bottom: 3em;
+    }
+
+    .masthead .container .query-text {
+        margin-top: -2em;
+        margin-bottom: 2em;
     }
 }

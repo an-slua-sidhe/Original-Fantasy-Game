@@ -11301,8 +11301,13 @@ body {
 }
 
 .projects-section {
+  padding: 5rem 0;
+}
 
-  padding: 10rem 0;
+@media (max-width: 991px) {
+  .projects-section {
+    padding: 3rem 0;
+  }
 }
 
 .projects-section .featured-text {
