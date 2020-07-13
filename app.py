@@ -22,9 +22,12 @@ def new_game():
 def get_classes():
     return render_template("classes_list.html")
 
+@app.route('/get_races')
+def get_races():
+    return render_template("races_list.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=os.environ.get("PORT"),
-            # Do not use 'debug=True' in actual applications, only when testing, like here! :)
+            # Do not use 'debug=True' in actual applications, only when testing!
             debug=True)

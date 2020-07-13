@@ -33,6 +33,13 @@ body #block-content-container {
     font-size: 0.7em;
 }
 
+.section-divider {
+    border-color: #64a19d;
+    border-width: 0.25rem;
+    width: 30%;
+    margin-top: 3em;
+    margin-bottom: 0;
+}
 
 /* Main Page */
 #logo {
