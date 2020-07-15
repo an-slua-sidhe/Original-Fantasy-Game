@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Masthead -->
+<header>
+    <div class="crud-bg">
+        <div class="container align-items-center">
+            <div class="row text-center mx-auto">
+
+                <!-- Page Heading Text -->
+                <div class="query-text col-12">
+                    <h1 class="mx-auto my-0 mx-2 text-uppercase"><strong>Create a New Class</strong>
+                    </h1>
+                </div>
+
+                <form class="crud-form-bg col-8 mx-auto my-5">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">+2</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">+1</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio3">-1</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio4">-2</label>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="col-12"><a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                        href="{{ url_for('insert_class') }}">Save Class</a></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

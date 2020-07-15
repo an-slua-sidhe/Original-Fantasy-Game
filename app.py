@@ -26,8 +26,16 @@ def get_classes():
 def get_races():
     return render_template("races_list.html")
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=os.environ.get("PORT"),
+@app.route('/create_class')
+def create_class():
+    return render_template("create_class.html")
+
+@app.route('/insert_class')
+def insert_class():
+    return render_template("classes_list.html")
+
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=os.environ.get('PORT'),
             # Do not use 'debug=True' in actual applications, only when testing!
             debug=True)

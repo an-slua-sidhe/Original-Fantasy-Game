@@ -15,14 +15,6 @@ body #block-content-container {
     padding: 0;
 }
 
-/* .ui-choice-btn {
-    margin: 0 1em;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-} */
-
 /* General Styles */
 
 .masthead .container .query-text {
@@ -62,13 +54,32 @@ body #block-content-container {
     padding: 5em 0;
 }
 
-@media (max-width: 991px) {}
-
 #classes-container {
     margin: 0;
     padding: 0;
 }
 
+
+/* CRUD Pages */
+
+.crud-bg {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 35rem;
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/misc/crud_screen_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    color: rgb(235, 225, 225);
+}
+
+.crud-form-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4em;
+}
 
 /* My Own Targeted Media Queries */
 @media (min-width: 992px) {
