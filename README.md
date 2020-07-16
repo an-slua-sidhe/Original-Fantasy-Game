@@ -1,11 +1,13 @@
 
 
-(Remember to include section in Testing about Validation
+(
+- Remember to include section in Testing about Validation
 - Add Heroku to Deployment section.
 - Add database Schema to development section
 - Bootstrap Template:
     Source Site: https://startbootstrap.com/themes/grayscale/
     Live Site: https://startbootstrap.github.io/startbootstrap-grayscale/
+- Outline the Template Inheritance structure in the design section
     )
 
 ![Elite Gourmet Banner Logo](assets/images/banner.png "Elite Gourmet Banner Logo")
