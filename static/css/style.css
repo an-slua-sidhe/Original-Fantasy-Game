@@ -22,7 +22,7 @@ body #block-content-container {
 }
 
 .masthead .container .query-text h1 strong {
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
 .section-divider {
@@ -47,16 +47,21 @@ body #block-content-container {
 /* New Game Page */
 
 
-/* List of Classes Page */
+/* List of Classes/Races Pages */
 
-#classes-masthead .masthead {
+#list-masthead .masthead {
     height: 50vh;
     padding: 5em 0;
 }
 
-#classes-container {
+#list-container {
     margin: 0;
     padding: 0;
+}
+
+#list-container .query-text {
+    font-size: 3em;
+    color: rgb(235, 225, 225);
 }
 
 
@@ -65,23 +70,70 @@ body #block-content-container {
 .crud-bg {
     position: relative;
     width: 100%;
-    height: 90vh;
     min-height: 35rem;
     padding: 10rem 0;
     background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/misc/crud_screen_bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: cover;
+    background-size: auto;
     color: rgb(235, 225, 225);
 }
 
+.crud-bg .align-items-center {
+    padding: 0;
+}
+
 .crud-form-bg {
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 4em;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: contain;
+}
+
+.crud-form-bg .query-text {
+    font-family: serif;
+}
+
+.crud-form-bg .form-group {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2em;
+    width: 70%;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.carousel-inner {
+    border-radius: 8px;
+}
+
+.carousel-inner .carousel-item p {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    width: 55%;
+    color: #fff;
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* My Own Targeted Media Queries */
+
+@media (min-width: 2500px) {
+    .section-divider {
+        width: 10%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 2499px) {
+    .section-divider {
+        width: 20%;
+    }
+}
+
 @media (min-width: 992px) {
     .ui-choice-btn {
         font-size: 1.5em;
@@ -103,24 +155,78 @@ body #block-content-container {
         margin-bottom: 3em;
     }
 
-    /* List of Classes Page */
-    #classes-masthead .masthead {
+    .masthead .container .query-text h1 strong {
+        font-size: 0.8em;
+    }
+
+    /* List of Classes/Races Pages */
+    #list-masthead .masthead {
         height: 30vh;
         padding: 2em 0;
     }
 
+    .projects-section img {
+        border-radius: 8px;
+    }
+
+    /* CRUD Pages */
+    .crud-bg {
+        padding: 5em;
+        height: auto;
+    }
+
+    .crud-form-bg {
+        padding: 3em;
+        min-width: 80%;
+    }
 }
 
 
 @media (max-width: 767px) {
 
-    /* List of Classes Page */
-    #classes-masthead .masthead {
+    /* General Styles */
+    .masthead .container .query-text h1 strong {
+        font-size: 1.2em;
+    }
+
+    /* List of Classes/Races Pages */
+    #list-masthead .masthead {
         min-height: 25em;
     }
 
-    #classes-container {
+    #list-container {
         margin-top: -3em;
+    }
+
+    /* CRUD Pages */
+    .crud-bg {
+        padding: 3em;
+    }
+
+    .crud-form-bg {
+        padding: 1em;
+        min-width: 96%;
+    }
+
+    .crud-form-bg .form-group {
+        width: 90%
+    }
+}
+
+@media (max-width: 575px) {
+
+    /* General Styles */
+    .masthead .container .query-text h1 strong {
+        font-size: 1em;
+    }
+
+    /* CRUD Pages */
+    .crud-bg {
+        padding: 3em 2em;
+    }
+
+    .carousel-inner .carousel-item p {
+        width: 70%;
     }
 }
 
@@ -132,5 +238,10 @@ body #block-content-container {
     .masthead .container .query-text {
         margin-top: -2em;
         margin-bottom: 2em;
+    }
+
+    /* CRUD Pages */
+    .crud-bg {
+        padding: 3em 1em;
     }
 }
