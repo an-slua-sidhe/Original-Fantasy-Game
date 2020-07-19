@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+<<<<<<< HEAD
 from os import path
 if path.exists("env.py"):
     import env
@@ -11,6 +12,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'original_fantasy_game'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', SECRET_KEY)
+=======
+
+app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'original_fantasy_game'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb+srv://polocoinn:Ansluasidhe2@myfirstcluster-c89ie.mongodb.net/original_fantasy_game?retryWrites=true&w=majority')
+>>>>>>> 6dbe91b24754901d66da7d2a31e3287132b32094
 
 mongo = PyMongo(app)
 
@@ -26,8 +33,12 @@ def new_game():
 
 @app.route('/get_classes')
 def get_classes():
+<<<<<<< HEAD
     return render_template('classes_list.html', 
                             classes=mongo.db.classes.find())
+=======
+    return render_template('classes_list.html', classes=mongo.db.classes.find())
+>>>>>>> 6dbe91b24754901d66da7d2a31e3287132b32094
 
 @app.route('/create_class')
 def create_class():
@@ -37,7 +48,11 @@ def create_class():
 def insert_class():
     classes =  mongo.db.classes
     classes.insert_one(request.form.to_dict())
+<<<<<<< HEAD
     return redirect(url_for('create_class'))
+=======
+    return redirect(url_for('get_classes'))
+>>>>>>> 6dbe91b24754901d66da7d2a31e3287132b32094
 
 
 
