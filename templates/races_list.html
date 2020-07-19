@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Masthead -->
-<header id="classes-masthead">
+<header id="list-masthead">
     <div class="masthead">
         <div class="container d-flex h-100 align-items-center">
             <div class="row text-center mx-auto">
@@ -20,6 +20,8 @@
                 </div> -->
 
                 <!-- UI Choice Buttons -->
+
+                <!-- A Button which may be used -->
                 <!-- <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
                     href="{{ url_for('main_page') }}">Go to Home Screen</a></div> -->
 
@@ -30,24 +32,34 @@
     </div>
 </header>
 
-<!-- Classes Section -->
-<div id="classes-container">
+<!-- Races Section -->
+<div id="list-container">
     <section class="projects-section" id="projects">
+        <div class="query-text col-12">
+            <h1 class="mx-auto mt-5 mb-1 text-center">Preset Races</h1>
+        </div>
+    
+        <hr class="section-divider mt-lg-4 mb-lg-5">
+        
         <div class="container">
-
             <!-- Preset Race One: The Orc -->
             <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
+
                                 <h4 class="text-white">ORC</h4>
+
                                 <p class="mb-0 text-white-50">
                                     Orcs are ferocious and
                                     not the brightest etc.
                                 </p>
-                                <hr class="mt-2 mb-2 ml-0" />
+
+                                <hr class="mt-2 mb-2 ml-0">
+
                                 <h4 class="text-white">Starting Stats:</h4>
+
                                 <p class="mb-0 text-white-50">Stamina: +2</p>
                             </div>
                         </div>
@@ -55,9 +67,10 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/profiles/orc_warrior_m_cropped.jpg"
-                        alt="Image of the Orc" />
-                    <hr class="section-divider d-lg-none" />
+                    <img class="img-fluid" src="/static/images/profiles/orc_assassin_f.jpg"
+                        alt="Image of the Orc">
+
+                    <hr class="section-divider d-lg-none">
                 </div>
             </div>
 
@@ -68,11 +81,15 @@
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-white">ELF</h4>
+
                                 <p class="mb-0 text-white-50">
                                     Elves are insufferably skilled etc.
                                 </p>
-                                <hr class="mt-2 mb-2 mr-0" />
+
+                                <hr class="mt-2 mb-2 mr-0">
+
                                 <h4 class="text-white">Starting Stats:</h4>
+
                                 <p class="mb-0 text-white-50">Skill: +2</p>
                             </div>
                         </div>
@@ -80,9 +97,10 @@
                 </div>
 
                 <div class="col-lg-6 order-second order-lg-first">
-                    <img class="img-fluid" src="/static/images/profiles/elf_assassin_m_cropped.jpg"
-                        alt="Image of the Elf" />
-                    <hr class="section-divider d-lg-none" />
+                    <img class="img-fluid" src="/static/images/profiles/elf_warrior_f.jpg"
+                        alt="Image of the Elf">
+
+                    <hr class="section-divider d-lg-none">
 
                 </div>
             </div>
@@ -94,12 +112,16 @@
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
                                 <h4 class="text-white">PIXIE</h4>
+
                                 <p class="mb-0 text-white-50">
                                     Pixies are quite intelligent,
                                     but also annoying etc.
                                 </p>
-                                <hr class="mt-2 mb-2 ml-0" />
+
+                                <hr class="mt-2 mb-2 ml-0">
+
                                 <h4 class="text-white">Starting Stats:</h4>
+
                                 <p class="mb-0 text-white-50">Intelligence: +2</p>
                             </div>
                         </div>
@@ -107,9 +129,10 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/profiles/pix_mage_m_cropped.jpg"
-                        alt="Image of the Pixie" />
-                    <hr class="section-divider d-lg-none" />
+                    <img class="img-fluid" src="/static/images/profiles/pix_mage_m.jpg"
+                        alt="Image of the Pixie">
+
+                    <hr class="section-divider d-lg-none">
 
                 </div>
             </div>

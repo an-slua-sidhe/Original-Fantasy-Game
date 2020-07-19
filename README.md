@@ -7,6 +7,9 @@
 - Bootstrap Template:
     Source Site: https://startbootstrap.com/themes/grayscale/
     Live Site: https://startbootstrap.github.io/startbootstrap-grayscale/
+- Start Bootstrap Checkout Form:
+    Authors= Mark Otto, Jacob Thornton and Bootstrap contributors.
+    Generator= Jekyll v4.0.1 (https://getbootstrap.com/docs/4.5/examples/checkout/)
 - Outline the Template Inheritance structure in the design section
     )
 

@@ -4548,7 +4548,7 @@ input[type=button].btn-block {
   .custom-control-label::before,
   .custom-file-label,
   .custom-select {
-    transition: none;
+    /* transition: none; */
   }
 }
 
@@ -11301,7 +11301,7 @@ body {
 }
 
 .projects-section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 @media (max-width: 991px) {
@@ -11326,7 +11326,7 @@ body {
   font-size: 90%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .projects-section .project-text {
     padding: 5rem;
   }
