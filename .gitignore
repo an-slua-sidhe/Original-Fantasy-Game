@@ -1,5 +1,5 @@
 # created by virtualenv automatically
 *venv
 .vscode
-env.py
+.env
 __pycache__

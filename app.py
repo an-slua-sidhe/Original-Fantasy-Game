@@ -3,14 +3,14 @@ from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
-if path.exists('env.py'):
-    import env
+from dotenv import load_dotenv, find_dotenv
+load_dotenv()
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'original_fantasy_game'
-app.config['MONGO_URI'] = os.getenv('MONGO_URI', SECRET_KEY)
+app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
