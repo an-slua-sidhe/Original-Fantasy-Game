@@ -14,19 +14,8 @@
                     </h1>
                 </div>
 
-                <!-- A H2 which may be used -->
-                <!-- <div class="query-text col-12">
-                <h2 class="mx-auto mt-2 mb-5">What would you like to do?</h2>
-                </div> -->
-
-                <!-- UI Choice Buttons -->
-
-                <!-- A Button which may be used -->
-                <!-- <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
-                    href="{{ url_for('main_page') }}">Go to Home Screen</a></div> -->
-
                 <div class="col-12"><a class="ui-choice-btn btn btn-primary js-scroll-trigger"
-                        href="{{ url_for('main_page') }}">Create a New Race</a></div>
+                        href="{{ url_for('create_race') }}">Create a New Race</a></div>
             </div>
         </div>
     </div>
@@ -35,12 +24,14 @@
 <!-- Races Section -->
 <div id="list-container">
     <section class="projects-section" id="projects">
+
+        <!-- Preset Races -->
         <div class="query-text col-12">
             <h1 class="mx-auto mt-5 mb-1 text-center">Preset Races</h1>
         </div>
-    
+
         <hr class="section-divider mt-lg-4 mb-lg-5">
-        
+
         <div class="container">
             <!-- Preset Race One: The Orc -->
             <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
@@ -67,8 +58,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/profiles/orc_assassin_f.jpg"
-                        alt="Image of the Orc">
+                    <img class="img-fluid" src="/static/images/profiles/orc_assassin_f.jpg" alt="Image of the Orc">
 
                     <hr class="section-divider d-lg-none">
                 </div>
@@ -97,8 +87,7 @@
                 </div>
 
                 <div class="col-lg-6 order-second order-lg-first">
-                    <img class="img-fluid" src="/static/images/profiles/elf_warrior_f.jpg"
-                        alt="Image of the Elf">
+                    <img class="img-fluid" src="/static/images/profiles/elf_warrior_f.jpg" alt="Image of the Elf">
 
                     <hr class="section-divider d-lg-none">
 
@@ -129,14 +118,137 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/profiles/pix_mage_m.jpg"
-                        alt="Image of the Pixie">
+                    <img class="img-fluid" src="/static/images/profiles/pix_mage_m.jpg" alt="Image of the Pixie">
 
                     <hr class="section-divider d-lg-none">
 
                 </div>
             </div>
         </div>
+
+
+        <hr class="m-5 p-2">
+
+
+        <!-- Player Created Races -->
+        <div class="query-text col-12">
+            <h1 class="mx-auto mt-5 mb-1 text-center">Player Created Races</h1>
+        </div>
+
+        <hr class="section-divider mt-lg-4 mb-lg-5">
+
+        <div class="container">
+
+            <!-- JinJa to iterate through Player Created Races -->
+            {% for race in races %}
+
+            <!-- Jinja to alternate between race image displaying left or right -->
+            {% if loop.index % 2 != 0 %}
+
+            <!--  Player Created Race: Image Displayed First -->
+            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">{{ race.race_name }}</h4>
+
+                                <p class="mb-0 text-white-50">
+                                    {{ race.race_information }}
+                                </p>
+
+                                <hr class="mt-2 mb-2 mr-0">
+
+                                <h4 class="text-white">Starting Stats:</h4>
+
+                                <p class="mb-0 text-white-50">{{ race.race_stat_mod }}</p>
+
+                                <div class="crud-button-row row mt-3  d-none d-lg-block">
+                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
+                                        href="{{ url_for('edit_race', race_id=race._id) }}">Edit</a>
+
+                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
+                                        href="{{ url_for('delete_race', race_id=race._id) }}">Delete</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-second order-lg-first">
+                    <img class="img-fluid" src="/static/images/races/{{ race.race_image }}.jpg"
+                        alt="Image of {{ race.race_name }}">
+                </div>
+
+                <div class="container text-center crud-button-container d-lg-none">
+                    <div class="row">
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
+                                href="{{ url_for('edit_race', race_id=race._id) }}">Edit</a></div>
+
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
+                                href="{{ url_for('delete_race', race_id=race._id) }}">Delete</a></div>
+                    </div>
+                </div>
+                <hr class="section-divider d-lg-none">
+            </div>
+
+            {% else %}
+
+            <!-- Player Created Race: Image Displayed Second  -->
+            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">{{ race.race_name }}</h4>
+
+                                <p class="mb-0 text-white-50">
+                                    {{ race.race_information}}
+                                </p>
+
+                                <hr class="mt-2 mb-2 ml-0">
+
+                                <h4 class="text-white">Starting Stats:</h4>
+
+                                <p class="mb-0 text-white-50">{{ race.race_stat_mod }}</p>
+
+                                <div class="row mt-3 mb-0 p-0 d-none d-lg-block">
+                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
+                                        href="{{ url_for('edit_race', race_id=race._id) }}">Edit</a>
+
+                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
+                                        href="{{ url_for('delete_race', race_id=race._id) }}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/static/images/races/{{ race.race_image }}.jpg"
+                        alt="Image of {{ race.race_name }}">
+                </div>
+                
+                <div class="container text-center crud-button-container d-lg-none">
+                    <div class="row">
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
+                                href="{{ url_for('edit_race', race_id=race._id) }}">Edit</a></div>
+
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
+                                href="{{ url_for('delete_race', race_id=race._id) }}">Delete</a></div>
+                    </div>
+                </div>
+
+                <hr class="section-divider d-lg-none">
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
     </section>
 </div>
 {% endblock %}

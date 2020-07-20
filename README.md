@@ -11,6 +11,12 @@
     Authors= Mark Otto, Jacob Thornton and Bootstrap contributors.
     Generator= Jekyll v4.0.1 (https://getbootstrap.com/docs/4.5/examples/checkout/)
 - Outline the Template Inheritance structure in the design section
+
+- Art Credits: Fighting Fantasy Covers (Forest of Doom, Deathtrap Dungeon(?))
+- Pinterest
+- Deviant Art
+- Roger Dean piece
+- My own assets
     )
 
 ![Elite Gourmet Banner Logo](assets/images/banner.png "Elite Gourmet Banner Logo")

@@ -64,6 +64,19 @@ body #block-content-container {
     color: rgb(235, 225, 225);
 }
 
+.crud-button-container {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.crud-button {
+    width: 10em;
+}
+
+.btn-warning {
+    background-color: #f0bf2f;
+}
+
 
 /* CRUD Pages */
 
@@ -169,6 +182,10 @@ body #block-content-container {
         border-radius: 8px;
     }
 
+    .crud-button {
+        height: 4em;
+    }
+
     /* CRUD Pages */
     .crud-bg {
         padding: 5em;
@@ -240,6 +257,15 @@ body #block-content-container {
         margin-bottom: 2em;
     }
 
+    /* List of Classes/Races Pages */
+    .rud-button-row {
+        align-items: center;
+    }
+
+    project-text .crud-button {
+        font-size: 0.6em;
+    }
+    
     /* CRUD Pages */
     .crud-bg {
         padding: 3em 1em;

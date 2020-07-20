@@ -8,36 +8,36 @@
         <div class="container align-items-center">
             <div class="row text-center mx-auto">
 
-                <!-- Create Class Form -->
-                <form action="{{ url_for('insert_class') }}" method="POST"
+                <!-- Create Race Form -->
+                <form action="{{ url_for('insert_race') }}" method="POST"
                     class="needs-validation crud-form-bg col-10 col-md-8 mx-auto my-5">
 
                     <div class="query-text col-12">
-                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Create a New Class</h1>
+                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Create a New Race</h1>
                     </div>
 
-                    <!-- Class Name -->
+                    <!-- Race Name -->
                     <div class="form-group">
-                        <label for="input-name">Class Name</label>
-                        <input type="text" name="class_name" class="form-control" id="input-name"
-                            placeholder="What is your class called?" maxlength="20" required>
+                        <label for="input-name">Race Name</label>
+                        <input type="text" name="race_name" class="form-control" id="input-name"
+                            placeholder="What is your race called?" maxlength="20" required>
                     </div>
 
-                    <!-- Class Information -->
+                    <!-- Race Information -->
                     <div class="form-group">
-                        <label for="text-input">Class Information</label>
+                        <label for="text-input">Race Information</label>
 
-                        <textarea name="class_information" class="form-control" id="text-input" rows="2"
-                            placeholder="What does your class do?" maxlength="100" required></textarea>
+                        <textarea name="race_information" class="form-control" id="text-input" rows="2"
+                            placeholder="Describe your race..." maxlength="100" required></textarea>
                     </div>
 
-                    <!-- Unique Class Statistic Modifier -->
-                    <p>Class Stat Modifier</p>
+                    <!-- Unique Race Statistic Modifier -->
+                    <p>Race Stat Modifier</p>
 
                     <div class="form-group input-group mb-3">
                         <label class="input-group-text" for="statModifierSelect">Choose</label>
 
-                        <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
+                        <select name="race_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             required>
                             <option value="">None</option>
 
@@ -49,9 +49,9 @@
                         </select>
                     </div>
 
-                    <!-- New Class Image Choice Carousel -->
+                    <!-- New Race Image Choice Carousel -->
                     <div class="form-group mb-0 pb-3">
-                        <label for="carousel-images">Class Images</label>
+                        <label for="carousel-images">Race Images</label>
 
                         <div id="carousel-images" class="carousel slide" data-interval="false">
                             <ol class="carousel-indicators">
@@ -70,56 +70,56 @@
 
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="/static/images/classes/new_class_healer.jpg" class="d-block w-100"
-                                        alt="New Class Image 1">
+                                    <img src="/static/images/races/new_race_dragon.jpg" class="d-block w-100"
+                                        alt="New Race Image 1">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 1</p>
+                                        <p>Race Image 1</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="/static/images/classes/new_class_thief.jpg" class="d-block w-100"
-                                        alt="New Class Image 2">
+                                    <img src="/static/images/races/new_race_tiger.jpg" class="d-block w-100"
+                                        alt="New Race Image 2">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 2</p>
+                                        <p>Race Image 2</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="/static/images/classes/new_class_scholar.jpg" class="d-block w-100"
+                                    <img src="/static/images/races/new_race_slug.jpg" class="d-block w-100"
                                         alt="New Class Image 3">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 3</p>
+                                        <p>Race Image 3</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="/static/images/classes/new_class_monk.jpg" class="d-block w-100"
+                                    <img src="/static/images/races/new_race_dwarf.jpg" class="d-block w-100"
                                         alt="New Class Image 4">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 4</p>
+                                        <p>Race Image 4</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="/static/images/classes/new_class_bard.jpg" class="d-block w-100"
+                                    <img src="/static/images/races/new_race_griffin.jpg" class="d-block w-100"
                                         alt="New Class Image 5">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 5</p>
+                                        <p>Race Image 5</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="/static/images/classes/new_class_automaton.jpg" class="d-block w-100"
+                                    <img src="/static/images/races/new_race_lizard.jpg" class="d-block w-100"
                                         alt="New Class Image 6">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image 6</p>
+                                        <p>Race Image 6</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,27 +139,27 @@
                     </div>
 
                     <div class="form-group input-group mb-3">
-                        <label class="input-group-text" for="classImageSelect">Choose</label>
+                        <label class="input-group-text" for="raceImageSelect">Choose</label>
 
-                        <select name="class_image" class="custom-select" id="classImageSelect" required>
+                        <select name="race_image" class="custom-select" id="raceImageSelect" required>
                             <option value="">None</option>
 
-                            <option value="new_class_healer">Class Image 1</option>
+                            <option value="new_race_dragon">Race Image 1</option>
 
-                            <option value="new_class_thief">Class Image 2</option>
+                            <option value="new_race_tiger">Race Image 2</option>
 
-                            <option value="new_class_scholar">Class Image 3</option>
+                            <option value="new_race_slug">Race Image 3</option>
 
-                            <option value="new_class_monk">Class Image 4</option>
+                            <option value="new_race_dwarf">Race Image 4</option>
 
-                            <option value="new_class_bard">Class Image 5</option>
+                            <option value="new_race_griffin">Race Image 5</option>
 
-                            <option value="new_class_automaton">Class Image 6</option>
+                            <option value="new_race_lizard">Race Image 6</option>
                         </select>
                     </div>
 
                     <div class="col-12"><button type="submit"
-                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Class</button></div>
+                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Race</button></div>
                 </form>
             </div>
         </div>

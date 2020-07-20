@@ -8,19 +8,20 @@
         <div class="container align-items-center">
             <div class="row text-center mx-auto">
 
-                <!-- Create Class Form -->
-                <form action="{{ url_for('insert_class') }}" method="POST"
+                <!-- Edit Class Form -->
+                <form action="{{ url_for('update_class', class_id=aClass._id) }}" method="POST"
                     class="needs-validation crud-form-bg col-10 col-md-8 mx-auto my-5">
 
                     <div class="query-text col-12">
-                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Create a New Class</h1>
+                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Edit Your Class</h1>
                     </div>
 
                     <!-- Class Name -->
                     <div class="form-group">
                         <label for="input-name">Class Name</label>
                         <input type="text" name="class_name" class="form-control" id="input-name"
-                            placeholder="What is your class called?" maxlength="20" required>
+                            placeholder="What is your class called?" maxlength="20"
+                            value="Previous Name: {{ aClass.class_name }}" required>
                     </div>
 
                     <!-- Class Information -->
@@ -28,7 +29,9 @@
                         <label for="text-input">Class Information</label>
 
                         <textarea name="class_information" class="form-control" id="text-input" rows="2"
-                            placeholder="What does your class do?" maxlength="100" required></textarea>
+                            placeholder="What does your class do?" maxlength="100"
+                            value="{{ aClass.class_information }}"
+                            required>Previous Info: {{ aClass.class_information }}</textarea>
                     </div>
 
                     <!-- Unique Class Statistic Modifier -->
@@ -38,8 +41,8 @@
                         <label class="input-group-text" for="statModifierSelect">Choose</label>
 
                         <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
-                            required>
-                            <option value="">None</option>
+                            value="{{ aClass.class_stat_mod }}" required>
+                            <option value="">Previous Info: {{ aClass.class_stat_mod }}</option>
 
                             <option value="Stamina +2">Stamina +2</option>
 
@@ -141,8 +144,9 @@
                     <div class="form-group input-group mb-3">
                         <label class="input-group-text" for="classImageSelect">Choose</label>
 
-                        <select name="class_image" class="custom-select" id="classImageSelect" required>
-                            <option value="">None</option>
+                        <select name="class_image" class="custom-select" id="classImageSelect"
+                            value="{{ aClass.class_image }}" required>
+                            <option value="">Choose a New Image</option>
 
                             <option value="new_class_healer">Class Image 1</option>
 
@@ -158,8 +162,13 @@
                         </select>
                     </div>
 
-                    <div class="col-12"><button type="submit"
-                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Class</button></div>
+                    <div class=" align-content-center">
+                        <button class="col-4 crud-button p-3 btn btn-primary js-scroll-trigger" type="submit"
+                            name="action">Update</button>
+
+                        <a class="col-4 crud-button p-3 btn btn-secondary js-scroll-trigger"
+                            href="{{ url_for('get_classes') }}">Cancel</a>
+                    </div>
                 </form>
             </div>
         </div>
