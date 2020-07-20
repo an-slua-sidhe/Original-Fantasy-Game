@@ -183,7 +183,10 @@ body #block-content-container {
     }
 
     .crud-button {
-        height: 4em;
+        height: 4.4em;
+        width: 9em;
+        font-size: 0.7em;
+        padding: 1.3em 0;
     }
 
     /* CRUD Pages */
@@ -265,7 +268,7 @@ body #block-content-container {
     project-text .crud-button {
         font-size: 0.6em;
     }
-    
+
     /* CRUD Pages */
     .crud-bg {
         padding: 3em 1em;

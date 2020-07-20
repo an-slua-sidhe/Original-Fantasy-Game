@@ -25,6 +25,129 @@
 <div id="list-container">
     <section class="projects-section" id="projects">
 
+        <!-- Player Created Classes -->
+        <div class="query-text col-12">
+            <h1 class="mx-auto mt-5 mb-1 text-center">Player Created Classes</h1>
+        </div>
+
+        <hr class="section-divider mt-lg-4 mb-lg-5">
+
+        <div class="container">
+
+            <!-- JinJa to iterate through Player Created Classes -->
+            {% for class in classes %}
+
+            <!-- Jinja to alternate between class image displaying left or right -->
+            {% if loop.index % 2 != 0 %}
+
+            <!--  Player Created Class: Image Displayed First -->
+            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">{{ class.class_name }}</h4>
+
+                                <p class="mb-0 text-white-50">
+                                    {{ class.class_information }}
+                                </p>
+
+                                <hr class="mt-2 mb-2 mr-0">
+
+                                <h4 class="text-white">Starting Stats:</h4>
+
+                                <p class="mb-0 text-white-50">{{ class.class_stat_mod }}</p>
+
+                                <div class="crud-button-row row mt-3  d-none d-lg-block">
+                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
+                                        href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a>
+
+                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
+                                        href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-second order-lg-first">
+                    <img class="img-fluid" src="/static/images/classes/{{ class.class_image }}.jpg"
+                        alt="Image of {{ class.class_name }}">
+                </div>
+
+                <div class="container text-center crud-button-container d-lg-none">
+                    <div class="row">
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
+                                href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a></div>
+
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
+                                href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a></div>
+                    </div>
+                </div>
+                <hr class="section-divider d-lg-none">
+            </div>
+
+
+
+            {% else %}
+
+            <!-- Player Created Class: Image Displayed Second  -->
+            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">{{ class.class_name }}</h4>
+
+                                <p class="mb-0 text-white-50">
+                                    {{ class.class_information}}
+                                </p>
+
+                                <hr class="mt-2 mb-2 ml-0">
+
+                                <h4 class="text-white">Starting Stats:</h4>
+
+                                <p class="mb-0 text-white-50">{{ class.class_stat_mod }}</p>
+
+                                <div class="row mt-3 mb-0 p-0 d-none d-lg-block">
+                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
+                                        href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a>
+
+                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
+                                        href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/static/images/classes/{{ class.class_image }}.jpg"
+                        alt="Image of {{ class.class_name }}">
+                </div>
+
+                <div class="container text-center crud-button-container d-lg-none">
+                    <div class="row">
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
+                                href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a></div>
+
+                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
+                                href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a></div>
+                    </div>
+                </div>
+
+                <hr class="section-divider d-lg-none">
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <hr class="m-5 p-2">
+
         <!-- Preset Classes -->
         <div class="query-text col-12">
             <h1 class="mx-auto mt-5 mb-1 text-center">Preset Classes</h1>
@@ -130,130 +253,6 @@
                     <hr class="section-divider d-lg-none">
                 </div>
             </div>
-        </div>
-
-        <hr class="m-5 p-2">
-
-
-        <!-- Player Created Classes -->
-        <div class="query-text col-12">
-            <h1 class="mx-auto mt-5 mb-1 text-center">Player Created Classes</h1>
-        </div>
-
-        <hr class="section-divider mt-lg-4 mb-lg-5">
-
-        <div class="container">
-
-            <!-- JinJa to iterate through Player Created Classes -->
-            {% for class in classes %}
-
-            <!-- Jinja to alternate between class image displaying left or right -->
-            {% if loop.index % 2 != 0 %}
-
-            <!--  Player Created Class: Image Displayed First -->
-            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">{{ class.class_name }}</h4>
-
-                                <p class="mb-0 text-white-50">
-                                    {{ class.class_information }}
-                                </p>
-
-                                <hr class="mt-2 mb-2 mr-0">
-
-                                <h4 class="text-white">Starting Stats:</h4>
-
-                                <p class="mb-0 text-white-50">{{ class.class_stat_mod }}</p>
-
-                                <div class="crud-button-row row mt-3  d-none d-lg-block">
-                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
-                                        href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a>
-
-                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
-                                        href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 order-second order-lg-first">
-                    <img class="img-fluid" src="/static/images/classes/{{ class.class_image }}.jpg"
-                        alt="Image of {{ class.class_name }}">
-                </div>
-
-                <div class="container text-center crud-button-container d-lg-none">
-                    <div class="row">
-                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
-                                href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a></div>
-
-                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
-                                href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a></div>
-                    </div>
-                </div>
-                <hr class="section-divider d-lg-none">
-            </div>
-
-
-
-            {% else %}
-
-            <!-- Player Created Class: Image Displayed Second  -->
-            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">{{ class.class_name }}</h4>
-
-                                <p class="mb-0 text-white-50">
-                                    {{ class.class_information}}
-                                </p>
-
-                                <hr class="mt-2 mb-2 ml-0">
-
-                                <h4 class="text-white">Starting Stats:</h4>
-
-                                <p class="mb-0 text-white-50">{{ class.class_stat_mod }}</p>
-
-                                <div class="row mt-3 mb-0 p-0 d-none d-lg-block">
-                                    <a class="crud-button p-2 btn btn-primary js-scroll-trigger"
-                                        href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a>
-
-                                    <a class="crud-button p-2 btn btn-warning js-scroll-trigger"
-                                        href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/classes/{{ class.class_image }}.jpg"
-                        alt="Image of {{ class.class_name }}">
-                </div>
-                
-                <div class="container text-center crud-button-container d-lg-none">
-                    <div class="row">
-                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-primary js-scroll-trigger"
-                                href="{{ url_for('edit_class', class_id=class._id) }}">Edit</a></div>
-
-                        <div class="col-6 m-0 p-0"><a class="crud-button btn btn-warning js-scroll-trigger"
-                                href="{{ url_for('delete_class', class_id=class._id) }}">Delete</a></div>
-                    </div>
-                </div>
-
-                <hr class="section-divider d-lg-none">
-            </div>
-
-            {% endif %}
-
-            {% endfor %}
-
         </div>
     </section>
 </div>
