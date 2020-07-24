@@ -21,7 +21,7 @@
                         <label for="input-name">Class Name</label>
                         <input type="text" name="class_name" class="form-control" id="input-name"
                             placeholder="What is your class called?" maxlength="20"
-                            value="Previous Name: {{ aClass.class_name }}" required>
+                            value="{{ aClass.class_name }}" required>
                     </div>
 
                     <!-- Class Information -->
@@ -31,7 +31,7 @@
                         <textarea name="class_information" class="form-control" id="text-input" rows="2"
                             placeholder="What does your class do?" maxlength="100"
                             value="{{ aClass.class_information }}"
-                            required>Previous Info: {{ aClass.class_information }}</textarea>
+                            required>{{ aClass.class_information }}</textarea>
                     </div>
 
                     <!-- Unique Class Statistic Modifier -->
@@ -42,7 +42,7 @@
 
                         <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             value="{{ aClass.class_stat_mod }}" required>
-                            <option value="">Previous Info: {{ aClass.class_stat_mod }}</option>
+                            <option value="">None</option>
 
                             <option value="Stamina +2">Stamina +2</option>
 
@@ -146,7 +146,7 @@
 
                         <select name="class_image" class="custom-select" id="classImageSelect"
                             value="{{ aClass.class_image }}" required>
-                            <option value="">Choose a New Image</option>
+                            <option value="">None</option>
 
                             <option value="new_class_healer">Class Image 1</option>
 

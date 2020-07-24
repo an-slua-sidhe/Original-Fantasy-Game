@@ -8,6 +8,7 @@ load_dotenv()
 
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
+# CONFIG 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'original_fantasy_game'
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
@@ -24,10 +25,12 @@ def new_game():
     return render_template('new_game.html')
 
 
+# CLASS ROUTES
 @app.route('/get_classes')
 def get_classes():
     return render_template('classes_list.html',
-                            classes=mongo.db.classes.find())
+                            classes=mongo.db.classes.find(),
+                            presetClasses=mongo.db.preset_classes.find())
 
 @app.route('/create_class')
 def create_class():
@@ -62,10 +65,12 @@ def delete_class(class_id):
     return redirect(url_for('get_classes'))
 
 
+# RACE ROUTES
 @app.route('/get_races')
 def get_races():
     return render_template('races_list.html', 
-                            races=mongo.db.races.find())
+                            races=mongo.db.races.find(),
+                            presetRaces=mongo.db.preset_races.find())
 
 @app.route('/create_race')
 def create_race():
@@ -99,7 +104,11 @@ def delete_race(race_id):
     mongo.db.races.remove({'_id': ObjectId(race_id)})
     return redirect(url_for('get_races'))
 
+# CHARACTER ROUTES
 
+
+
+# APP RUN
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),

@@ -15,6 +15,7 @@ body #block-content-container {
     padding: 0;
 }
 
+
 /* General Styles */
 
 .masthead .container .query-text {
@@ -42,9 +43,6 @@ body #block-content-container {
 #logo p {
     color: #fff;
 }
-
-
-/* New Game Page */
 
 
 /* List of Classes/Races Pages */
@@ -132,6 +130,7 @@ body #block-content-container {
     font-family: sans-serif;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 /* My Own Targeted Media Queries */
 
@@ -251,6 +250,8 @@ body #block-content-container {
 }
 
 @media (max-width: 359px) {
+
+    /* General Styles */
     #logo {
         margin-bottom: 3em;
     }

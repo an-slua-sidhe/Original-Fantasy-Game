@@ -21,7 +21,7 @@
                         <label for="input-name">Race Name</label>
                         <input type="text" name="race_name" class="form-control" id="input-name"
                             placeholder="What is your race called?" maxlength="20"
-                            value="Previous Name: {{ race.race_name }}" required>
+                            value="{{ race.race_name }}" required>
                     </div>
 
                     <!-- Race Information -->
@@ -30,7 +30,7 @@
 
                         <textarea name="class_information" class="form-control" id="text-input" rows="2"
                             placeholder="Describe your race..." maxlength="100" value="{{ race.race_information }}"
-                            required>Previous Info: {{ race.race_information }}</textarea>
+                            required>{{ race.race_information }}</textarea>
                     </div>
 
                     <!-- Unique Race Statistic Modifier -->
@@ -41,7 +41,7 @@
 
                         <select name="race_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             value="{{ race.race_stat_mod }}" required>
-                            <option value="">Previous Info: {{ race.race_stat_mod }}</option>
+                            <option value="">None</option>
 
                             <option value="Stamina +2">Stamina +2</option>
 
@@ -145,7 +145,7 @@
 
                         <select name="class_image" class="custom-select" id="classImageSelect"
                             value="{{ race.race_image }}" required>
-                            <option value="">Choose a New Image</option>
+                            <option value="">None</option>
 
                             <option value="new_race_dragon">Race Image 1</option>
 

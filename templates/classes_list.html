@@ -156,33 +156,39 @@
         <hr class="section-divider mt-lg-4 mb-lg-5">
 
         <div class="container">
-            <!-- Preset Class One: The Warrior  -->
+
+            <!-- JinJa to iterate through Preset Classes -->
+            {% for presetClass in presetClasses %}
+
+            <!-- Jinja to alternate between Preset Class image displaying left or right -->
+            {% if loop.index % 2 != 0 %}
+
+            <!-- Preset Class: Image Displayed First -->
             <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">WARRIOR</h4>
+                                <h4 class="text-white">{{ presetClass.pre_cl_name }}</h4>
 
                                 <p class="mb-0 text-white-50">
-                                    The warrior is obviously strong and does this and that and the other thing. It is
-                                    known that etc.
+                                    {{ presetClass.pre_cl_info }}
                                 </p>
 
                                 <hr class="mt-2 mb-2 ml-0">
 
                                 <h4 class="text-white">Starting Stats:</h4>
 
-                                <p class="mb-0 text-white-50">Stamina: +2</p>
+                                <p class="mb-0 text-white-50">{{ presetClass.pre_cl_mod_1 }}</p>
 
-                                <p class="mb-0 text-white-50">Intelligence: -2</p>
+                                <p class="mb-0 text-white-50">{{ presetClass.pre_cl_mod_2 }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/classes/preset_class_warrior.jpg"
+                    <img class="img-fluid" src="/static/images/classes/{{ presetClass.pre_cl_image }}.jpg"
                         alt="Image of the Warrior">
 
                     <hr class="section-divider d-lg-none">
@@ -190,69 +196,45 @@
 
             </div>
 
-            <!--  Preset Class Two: The Assassin -->
+
+            {% else %}
+
+            <!--  Preset Class: Image Displayed Second -->
             <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">ASSASSIN</h4>
+                                <h4 class="text-white">{{ presetClass.pre_cl_name }}</h4>
 
                                 <p class="mb-0 text-white-50">
-                                    The assassin is a very
-                                    sneaky person indeed, and never does this and that etc
+                                    {{ presetClass.pre_cl_info }}
                                 </p>
 
                                 <hr class="mt-2 mb-2 mr-0">
 
                                 <h4 class="text-white">Starting Stats:</h4>
 
-                                <p class="mb-0 text-white-50">Stamina: +1</p>
+                                <p class="mb-0 text-white-50">{{ presetClass.pre_cl_mod_1 }}</p>
 
-                                <p class="mb-0 text-white-50">Intelligence: +1</p>
+                                <p class="mb-0 text-white-50">{{ presetClass.pre_cl_mod_2 }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 order-second order-lg-first">
-                    <img class="img-fluid" src="/static/images/classes/preset_class_assassin.jpg"
+                    <img class="img-fluid" src="/static/images/classes/{{ presetClass.pre_cl_image }}.jpg"
                         alt="Image of the Assassin">
 
                     <hr class="section-divider d-lg-none">
                 </div>
             </div>
 
-            <!-- Preset Class Three: The Mage-->
-            <div class="row justify-content-center no-gutters mx-4 mx-xl-0 mb-5 mb-lg-0">
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">MAGE</h4>
+            {% endif %}
 
-                                <p class="mb-0 text-white-50">
-                                    The mage is an august and long-winded individual etc.
-                                </p>
+            {% endfor %}
 
-                                <hr class="mt-2 mb-2 ml-0">
-
-                                <h4 class="text-white">Starting Stats:</h4>
-
-                                <p class="mb-0 text-white-50">Intelligence: +2</p>
-
-                                <p class="mb-0 text-white-50">Stamina: -2</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="/static/images/classes/preset_class_mage.jpg" alt="Image of the Mage">
-
-                    <hr class="section-divider d-lg-none">
-                </div>
-            </div>
         </div>
     </section>
 </div>

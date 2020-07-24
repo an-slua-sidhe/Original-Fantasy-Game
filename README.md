@@ -16,6 +16,8 @@
 - Pinterest
 - Deviant Art
 - Roger Dean piece
+- Thief image
+- Sláine image
 - My own assets
     )
 
