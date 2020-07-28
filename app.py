@@ -25,6 +25,10 @@ def main_page():
 def new_game():
     return render_template('new_game.html')
 
+# @app.route('/start_game')
+# def new_game():
+#     return render_template('start_game.html')
+
 
 # CLASS ROUTES
 @app.route('/get_classes')
@@ -107,9 +111,51 @@ def delete_race(race_id):
     mongo.db.races.remove({'_id': ObjectId(race_id)})
     return redirect(url_for('get_races'))
 
+
 # CHARACTER ROUTES
+@app.route('/get_characters')
+def get_characters():
+    return render_template('characters_list.html', 
+                            characters=mongo.db.characters.find())
 
+@app.route('/create_character')
+def create_character():
+    return render_template('create_character.html',
+                            classes=mongo.db.classes.find(),
+                            races=mongo.db.races.find(),
+                            newCharacterImages=mongo.db.profile_images.find())
 
+@app.route('/insert_character', methods=['POST'])
+def insert_character():
+    characters =  mongo.db.characters
+    characters.insert_one(request.form.to_dict())
+    return redirect(url_for('get_characters'))
+
+@app.route('/edit_character/<character_id>')
+def edit_character(character_id):
+    return render_template('edit_character.html', 
+                            race=mongo.db.characters.find_one({'_id': ObjectId(character_id)}))
+
+@app.route('/update_character/<character_id>', methods=["POST"])
+def update_character(character_id):
+    characters = mongo.db.character
+    characters.update( {'_id': ObjectId(character_id)},
+    {
+        'character_name':request.form.get('character_name'),
+        'gender':request.form.get('gender'),
+        'race_name': request.form.get('race_name'),
+        'race_stat_mod': request.form.get('race_stat_mod'),
+        'class_name': request.form.get('class_name'),
+        'class_stat_mod': request.form.get('class_stat_mod'),
+        'character_information':request.form.get('character_information'),
+        'profile_image': request.form.get('profile_image')
+    })
+    return redirect(url_for('get_characters'))
+
+@app.route('/delete_character/<character_id>')
+def delete_character(character_id):
+    mongo.db.characters.remove({'_id': ObjectId(character_id)})
+    return redirect(url_for('get_characters'))
 
 # APP RUN
 if __name__ == '__main__':

@@ -247,6 +247,18 @@ body #block-content-container {
     .carousel-inner .carousel-item p {
         width: 70%;
     }
+    /* List of Characters Page */
+
+.masthead .container .character-heading h1 strong {
+    font-size: .8em;
+}
+}
+
+@media (max-width: 400px) {
+    .masthead .container .character-heading h1 strong {
+        font-size: .7em;
+        margin
+    }
 }
 
 @media (max-width: 359px) {
@@ -273,5 +285,9 @@ body #block-content-container {
     /* CRUD Pages */
     .crud-bg {
         padding: 3em 1em;
+    }
+
+    .masthead .container .character-heading h1 strong {
+        font-size: .6em;
     }
 }

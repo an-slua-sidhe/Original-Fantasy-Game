@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- CRUD Masthead -->
+<header>
+    <div class="crud-bg">
+        <div class="container align-items-center">
+            <div class="row text-center mx-auto">
+
+                <!-- Create Character Form -->
+                <form action="{{ url_for('insert_class') }}" method="POST"
+                    class="needs-validation crud-form-bg col-10 col-md-8 mx-auto my-5">
+
+                    <div class="query-text col-12">
+                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Create a New Character</h1>
+                    </div>
+
+                    <!-- Character Name -->
+                    <div class="form-group">
+                        <label for="input-name">Character Name</label>
+                        <input type="text" name="character_name" class="form-control" id="input-name"
+                            placeholder="What is your character called?" maxlength="20" required>
+                    </div>
+
+                    <!-- Character Information -->
+                    <div class="form-group">
+                        <label for="text-input">Character Information</label>
+
+                        <textarea name="class_information" class="form-control" id="text-input" rows="2"
+                            placeholder="What does your class do?" maxlength="100" required></textarea>
+                    </div>
+
+                    <!-- Character Choice -->
+                    <p>Choose your Character</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="statModifierSelect">Choose</label>
+
+                        <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
+                            required>
+                            <option value="">None</option>
+
+                            <option value="Stamina +2">Stamina: +2</option>
+
+                            <option value="Skill +2">Skill: +2</option>
+
+                            <option value="Intelligence +2">Intelligence: +2</option>
+                        </select>
+                    </div>
+
+                    <!-- New Class Image Choice Carousel -->
+                    <div class="form-group mb-0 pb-3">
+                        <label for="carousel-images">Class Images</label>
+
+                        <div id="carousel-images" class="carousel slide" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="1"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="2"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="3"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="4"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="5"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+
+                                {% for image in newClassImages %}
+
+                                <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                    <img src="{{ image.class_image }}" class="d-block w-100"
+                                        alt="New Class Image {{ loop.index }}">
+
+                                    <div class="carousel-caption">
+                                        <p>Class Image {{ loop.index }}</p>
+                                    </div>
+                                </div>
+
+                                {% endfor %}
+                                
+                            </div>
+
+                            <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="classImageSelect">Choose</label>
+
+                        <select name="class_image" class="custom-select" id="classImageSelect" required>
+                            <option value="">None</option>
+
+                            <option value="new_class_healer">Class Image 1</option>
+
+                            <option value="new_class_thief">Class Image 2</option>
+
+                            <option value="new_class_scholar">Class Image 3</option>
+
+                            <option value="new_class_monk">Class Image 4</option>
+
+                            <option value="new_class_bard">Class Image 5</option>
+
+                            <option value="new_class_automaton">Class Image 6</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12"><button type="submit"
+                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Class</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}
