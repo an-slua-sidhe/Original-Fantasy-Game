@@ -41,13 +41,12 @@
 
                         <select name="race_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             value="{{ race.race_stat_mod }}" required>
-                            <option value="">None</option>
 
-                            <option value="Stamina +2">Stamina +2</option>
+                            <option value="Stamina +2 {% if race.race_stat_mod == 'Stamina +2' %} active {% endif %}">Stamina +2</option>
 
-                            <option value="Skill +2">Skill +2</option>
+                            <option value="Skill +2 {% if race.race_stat_mod == 'Skill +2' %} active {% endif %}">Skill +2</option>
 
-                            <option value="Intelligence +2">Intelligence +2</option>
+                            <option value="Intelligence +2 {% if race.race_stat_mod == 'intelligence +2' %} active {% endif %}">Intelligence +2</option>
                         </select>
                     </div>
 
@@ -57,21 +56,21 @@
 
                         <div id="carousel-images" class="carousel slide" data-interval="false">
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-images" data-slide-to="0" {% if race.race_image == 'new_race_dragon' %} class="active" {% endif %}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="1"></li>
+                                <li data-target="#carousel-images" data-slide-to="1" {% if race.race_image == 'new_race_tiger' %} class="active" {% endif %}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="2"></li>
+                                <li data-target="#carousel-images" data-slide-to="2" {% if race.race_image == 'new_race_slug' %} class="active" {% endif %}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="3"></li>
+                                <li data-target="#carousel-images" data-slide-to="3" {% if race.race_image == 'new_race_dwarf' %} class="active" {% endif %}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="4"></li>
+                                <li data-target="#carousel-images" data-slide-to="4" {% if race.race_image == 'new_race_griffin' %} class="active" {% endif %}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="5"></li>
+                                <li data-target="#carousel-images" data-slide-to="5" {% if race.race_image == 'new_race_lizard' %} class="active" {% endif %}></li>
                             </ol>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item {% if race.race_image == 'new_race_dragon' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_dragon.jpg" class="d-block w-100"
                                         alt="New Race Image 1">
 
@@ -80,7 +79,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if race.race_image == 'new_race_tiger' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_tiger.jpg" class="d-block w-100"
                                         alt="New Race Image 2">
 
@@ -89,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if race.race_image == 'new_race_slug' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_slug.jpg" class="d-block w-100"
                                         alt="New Class Image 3">
 
@@ -98,7 +97,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if race.race_image == 'new_race_dwarf' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_dwarf.jpg" class="d-block w-100"
                                         alt="New Class Image 4">
 
@@ -107,7 +106,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if race.race_image == 'new_race_griffin' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_griffin.jpg" class="d-block w-100"
                                         alt="New Class Image 5">
 
@@ -116,7 +115,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if race.race_image == 'new_race_lizard' %} active {% endif%}">
                                     <img src="/static/images/races/new_race_lizard.jpg" class="d-block w-100"
                                         alt="New Class Image 6">
 

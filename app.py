@@ -6,7 +6,6 @@ from os import path
 from dotenv import load_dotenv
 load_dotenv()
 
-# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # CONFIG 
 app = Flask(__name__)
@@ -15,6 +14,8 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
+
+# ALL ROUTES
 @app.route('/')
 @app.route('/main_page')
 def main_page():
@@ -34,7 +35,8 @@ def get_classes():
 
 @app.route('/create_class')
 def create_class():
-    return render_template('create_class.html')
+    return render_template('create_class.html',
+                            newClassImages=mongo.db.class_images.find())
 
 @app.route('/insert_class', methods=['POST'])
 def insert_class():
@@ -55,7 +57,7 @@ def update_class(class_id):
         'class_name':request.form.get('class_name'),
         'class_information':request.form.get('class_information'),
         'class_stat_mod': request.form.get('class_stat_mod'),
-        'class_image': request.form.get('class_image'),
+        'class_image': request.form.get('class_image')
     })
     return redirect(url_for('get_classes'))
 
@@ -74,7 +76,8 @@ def get_races():
 
 @app.route('/create_race')
 def create_race():
-    return render_template('create_race.html')
+    return render_template('create_race.html',
+                            newRaceImages=mongo.db.race_images.find())
 
 @app.route('/insert_race', methods=['POST'])
 def insert_race():
@@ -113,3 +116,4 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),
             debug=True)
+

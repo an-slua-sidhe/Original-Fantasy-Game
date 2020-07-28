@@ -69,60 +69,19 @@
                             </ol>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/static/images/races/new_race_dragon.jpg" class="d-block w-100"
-                                        alt="New Race Image 1">
+
+                                {% for image in newRaceImages %}
+
+                                <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                    <img src="{{ image.race_image }}" class="d-block w-100"
+                                        alt="New Race Image {{ loop.index }}">
 
                                     <div class="carousel-caption">
-                                        <p>Race Image 1</p>
+                                        <p>Race Image {{ loop.index }}</p>
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
-                                    <img src="/static/images/races/new_race_tiger.jpg" class="d-block w-100"
-                                        alt="New Race Image 2">
-
-                                    <div class="carousel-caption">
-                                        <p>Race Image 2</p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="/static/images/races/new_race_slug.jpg" class="d-block w-100"
-                                        alt="New Class Image 3">
-
-                                    <div class="carousel-caption">
-                                        <p>Race Image 3</p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="/static/images/races/new_race_dwarf.jpg" class="d-block w-100"
-                                        alt="New Class Image 4">
-
-                                    <div class="carousel-caption">
-                                        <p>Race Image 4</p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="/static/images/races/new_race_griffin.jpg" class="d-block w-100"
-                                        alt="New Class Image 5">
-
-                                    <div class="carousel-caption">
-                                        <p>Race Image 5</p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="/static/images/races/new_race_lizard.jpg" class="d-block w-100"
-                                        alt="New Class Image 6">
-
-                                    <div class="carousel-caption">
-                                        <p>Race Image 6</p>
-                                    </div>
-                                </div>
-                            </div>
+                                {% endfor %}
 
                             <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

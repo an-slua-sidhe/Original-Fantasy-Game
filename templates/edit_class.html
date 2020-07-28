@@ -20,8 +20,8 @@
                     <div class="form-group">
                         <label for="input-name">Class Name</label>
                         <input type="text" name="class_name" class="form-control" id="input-name"
-                            placeholder="What is your class called?" maxlength="20"
-                            value="{{ aClass.class_name }}" required>
+                            placeholder="What is your class called?" maxlength="20" value="{{ aClass.class_name }}"
+                            required>
                     </div>
 
                     <!-- Class Information -->
@@ -30,8 +30,7 @@
 
                         <textarea name="class_information" class="form-control" id="text-input" rows="2"
                             placeholder="What does your class do?" maxlength="100"
-                            value="{{ aClass.class_information }}"
-                            required>{{ aClass.class_information }}</textarea>
+                            value="{{ aClass.class_information }}" required>{{ aClass.class_information }}</textarea>
                     </div>
 
                     <!-- Unique Class Statistic Modifier -->
@@ -42,13 +41,12 @@
 
                         <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             value="{{ aClass.class_stat_mod }}" required>
-                            <option value="">None</option>
 
-                            <option value="Stamina +2">Stamina +2</option>
+                            <option value="Stamina +2 {% if aClass.class_stat_mod == 'Stamina +2' %} active {% endif%}">Stamina +2</option>
 
-                            <option value="Skill +2">Skill +2</option>
+                            <option value="Skill +2 {% if aClass.class_stat_mod == 'Skill +2' %} active {% endif%}">Skill +2</option>
 
-                            <option value="Intelligence +2">Intelligence +2</option>
+                            <option value="Intelligence +2 {% if aClass.class_stat_mod == 'Intelligence +2' %} active {% endif%}">Intelligence +2</option>
                         </select>
                     </div>
 
@@ -58,21 +56,21 @@
 
                         <div id="carousel-images" class="carousel slide" data-interval="false">
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-images" data-slide-to="0" {% if aClass.class_image == 'new_class_healer' %} class="active" {% endif%} ></li>
 
-                                <li data-target="#carousel-images" data-slide-to="1"></li>
+                                <li data-target="#carousel-images" data-slide-to="1" {% if aClass.class_image == 'new_class_thief' %} class="active" {% endif%}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="2"></li>
+                                <li data-target="#carousel-images" data-slide-to="2" {% if aClass.class_image == 'new_class_thinker' %} class="active" {% endif%}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="3"></li>
+                                <li data-target="#carousel-images" data-slide-to="3" {% if aClass.class_image == 'new_class_monk' %} class="active" {% endif%}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="4"></li>
+                                <li data-target="#carousel-images" data-slide-to="4" {% if aClass.class_image == 'new_class_bard' %} class="active" {% endif%}></li>
 
-                                <li data-target="#carousel-images" data-slide-to="5"></li>
+                                <li data-target="#carousel-images" data-slide-to="5" {% if aClass.class_image == 'new_class_automaton' %} class="active" {% endif%}></li>
                             </ol>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_healer' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_healer.jpg" class="d-block w-100"
                                         alt="New Class Image 1">
 
@@ -81,7 +79,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_thief' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_thief.jpg" class="d-block w-100"
                                         alt="New Class Image 2">
 
@@ -90,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_scholar' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_scholar.jpg" class="d-block w-100"
                                         alt="New Class Image 3">
 
@@ -99,7 +97,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_monk' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_monk.jpg" class="d-block w-100"
                                         alt="New Class Image 4">
 
@@ -108,7 +106,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_bard' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_bard.jpg" class="d-block w-100"
                                         alt="New Class Image 5">
 
@@ -117,7 +115,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item">
+                                <div class="carousel-item {% if aClass.class_image == 'new_class_automaton' %} active {% endif%}">
                                     <img src="/static/images/classes/new_class_automaton.jpg" class="d-block w-100"
                                         alt="New Class Image 6">
 
