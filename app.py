@@ -38,7 +38,7 @@ def get_classes():
                             presetClasses=mongo.db.preset_classes.find())
 
 @app.route('/create_class')
-def create_class(stat_mods):
+def create_class():
     return render_template('create_class.html',
                             newClassImages=mongo.db.class_images.find())
 
