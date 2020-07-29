@@ -7,7 +7,7 @@
 <header id="list-masthead">
     <div class="masthead">
         <div class="container d-flex h-100 align-items-center">
-            <div class=" character-heading row text-center mx-auto">
+            <div class="character-heading row text-center mx-auto">
 
                 <!-- Page Heading Text -->
                 <div class="query-text col-12">
@@ -65,7 +65,7 @@
 
                                 <div class="crud-button-row row mt-3  d-none d-lg-block">
                                     <a class="crud-button col-4 p-2 btn btn-primary js-scroll-trigger"
-                                        href="{{ url_for('new_game', character_id=character._id) }}">Select</a>
+                                        href="{{ url_for('start_game', character_id=character._id) }}">Select</a>
 
                                     <a class="crud-button col-4 p-2 btn btn-secondary js-scroll-trigger"
                                         href="{{ url_for('edit_character', character_id=character._id) }}">Edit</a>
@@ -88,7 +88,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-4 col-lg-2 m-0 p-0"><a
                                 class="crud-button btn btn-primary js-scroll-trigger"
-                                href="{{ url_for('new_game', character_id=character._id) }}">Select</a></div>
+                                href="{{ url_for('start_game', character_id=character._id) }}">Select</a></div>
 
                         <div class="col-12 col-sm-4 col-lg-2 m-0 p-0"><a
                                 class="crud-button btn btn-secondary js-scroll-trigger"
@@ -128,7 +128,7 @@
 
                                 <div class="crud-button-row row mt-3  d-none d-lg-block">
                                     <a class="crud-button col-4 p-2 btn btn-primary js-scroll-trigger"
-                                        href="{{ url_for('new_game', character_id=character._id) }}">Select</a>
+                                        href="{{ url_for('start_game', character_id=character._id) }}">Select</a>
 
                                     <a class="crud-button col-4 p-2 btn btn-secondary js-scroll-trigger"
                                         href="{{ url_for('edit_character', character_id=character._id) }}">Edit</a>
@@ -150,7 +150,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-4 col-lg-2 m-0 p-0"><a
                                 class="crud-button btn btn-primary js-scroll-trigger"
-                                href="{{ url_for('new_game', character_id=character._id) }}">Select</a></div>
+                                href="{{ url_for('start_game', character_id=character._id) }}">Select</a></div>
 
                         <div class="col-12 col-sm-4 col-lg-2 m-0 p-0"><a
                                 class="crud-button btn btn-secondary js-scroll-trigger"

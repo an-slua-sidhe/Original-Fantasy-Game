@@ -25,10 +25,6 @@ def main_page():
 def new_game():
     return render_template('new_game.html')
 
-# @app.route('/start_game')
-# def new_game():
-#     return render_template('start_game.html')
-
 
 # CLASS ROUTES
 @app.route('/get_classes')
@@ -159,6 +155,21 @@ def update_character(character_id):
 def delete_character(character_id):
     mongo.db.characters.remove({'_id': ObjectId(character_id)})
     return redirect(url_for('get_characters'))
+
+
+# Game Routes
+@app.route('/start_game')
+def start_game():
+    return render_template('start_game.html')
+
+@app.route('/location_1')
+def location_1():
+    return render_template('location_1.html')
+
+@app.route('/game_locations')
+def game_locations():
+    return render_template('game_locations.html',
+                            locationImages=mongo.db.location_images)
 
 
 # APP RUN

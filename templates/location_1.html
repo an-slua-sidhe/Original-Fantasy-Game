@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Masthead -->
+<header id="location-1-bg" class="masthead">
+
+    <div class="container d-flex h-100 align-items-center">
+        <div class="character-heading row text-center mx-auto">
+            <div class="query-text col-12 mx-auto">
+                <h1 class="mx-auto my-0 mx-2 text-uppercase"><strong>Oh Dear!!</strong>
+                </h1>
+            </div>
+
+            <div id="under-construction-text" class="mx-auto mb-3">
+                <h4>
+                    Gadzooks!
+                </h4>
+                <p>
+                    It seems the actual game is still under construction!
+                </p>
+                <p>
+                    Maybe if you come back later it will be ready?
+                </p>
+                <p>
+                    I'm sure it will be amazing! :-)
+                </p>
+                <p>
+                    Here are some of the features we are hoping to include...
+                </p>
+                <ol>
+                    <li>A fantasy world for you to explore in the style of the Fighting Fantasy game-books</li>
+                    <li>The ability to roll your Character's stats, which will be effected by Race and Class choices
+                    </li>
+                    <li>A fighting section modal using these stats, for when you encounter the lands more boisterous
+                        inhabitants</li>
+                    <li>The ability to collect and use items, including in battle and while exploring</li>
+                    <li>Sound effects and an atmospheric soundtrack to accompany your journey</li>
+                </ol>
+                <p>
+                    To have a look at some of the game location art, click the button below :-)
+                </p>
+                <h4>
+                    Hopefully see you soon!
+                </h4>
+            </div>
+
+            <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('main_page') }}">Return to Main Menu</a></div>
+
+            <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('game_locations') }}">See Game Location Art</a></div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

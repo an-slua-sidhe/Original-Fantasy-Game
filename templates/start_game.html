@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Masthead -->
+<header id="start-game-bg" class="masthead">
+
+    <div class="container d-flex h-100 align-items-center">
+        <div class="character-heading row text-center mx-auto">
+            <div class="query-text col-12">
+                <h1 class="mx-auto my-0 mx-2 text-uppercase"><strong>Are you ready to begin your adventure?</strong>
+                </h1>
+            </div>
+
+            <div class="col-12 col-md-6"> <a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('location_1') }}">Start with Selected Character</a></div>
+
+            <div class="col-12 col-md-6"><a class="ui-choice-btn btn btn-primary js-scroll-trigger"
+                    href="{{ url_for('get_characters') }}">Choose a Different Character</a></div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

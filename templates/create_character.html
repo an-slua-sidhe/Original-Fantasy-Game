@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="text-input">Character Information</label>
 
-                        <textarea name="character_information" class="form-control" id="text-input" rows="2"
+                        <textarea name="character_information" class="form-control" id="text-input" rows="3"
                             placeholder="What is your story?" maxlength="200" required></textarea>
                     </div>
 
@@ -221,8 +221,13 @@
                         </select>
                     </div>
 
-                    <div class="col-12"><button type="submit"
-                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Character</button></div>
+                    <div class="align-content-center">
+                        <button class="col-4 crud-button p-3 btn btn-primary js-scroll-trigger" type="submit"
+                            name="action">Save</button>
+
+                        <a class="col-4 crud-button p-3 btn btn-secondary js-scroll-trigger"
+                            href="{{ url_for('start_game') }}">Select</a>
+                    </div>
                 </form>
             </div>
         </div>

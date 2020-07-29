@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="text-input">Character Information</label>
 
-                        <textarea name="character_information" class="form-control" id="text-input" rows="2"
+                        <textarea name="character_information" class="form-control" id="text-input" rows="3"
                             placeholder="What is your story?" maxlength="200" value="{{ character.character_information }}"required>{{ character.character_information }}</textarea>
                     </div>
 
@@ -332,6 +332,7 @@
 
                         <select name="profile_image" class="custom-select" id="profileImageSelect" required>
 
+                            <!-- Attempt to loop through profile images -->
                             <!-- {% for image in newCharacterImages %}
                             
                             <option {% if image.profile_image == character.profile_image %} selected {% endif %} value="{{ image.name }}">Profile Image {{ loop.index }}</option>

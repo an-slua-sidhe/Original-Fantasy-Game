@@ -132,6 +132,57 @@ body #block-content-container {
 }
 
 
+/* Game Pages */
+
+#start-game-bg {
+    position: relative;
+    width: 100%;
+    min-height: 35rem;
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/beginning_path.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    color: rgb(235, 225, 225);
+}
+
+
+#location-1-bg {
+    position: relative;
+    width: 100%;
+    min-height: 35rem;
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/castle_in_distance.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    color: rgb(235, 225, 225);
+}
+
+#under-construction-text {
+    padding: 2em;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#under-construction-text div {
+    margin: .8em;
+}
+
+#under-construction-text ol li {
+    margin: 0.6em;
+    text-align: left;
+}
+
+#location-art-carousel {
+    padding: 2em;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
 /* My Own Targeted Media Queries */
 
 @media (min-width: 2500px) {
@@ -247,17 +298,17 @@ body #block-content-container {
     .carousel-inner .carousel-item p {
         width: 70%;
     }
+
     /* List of Characters Page */
 
-.masthead .container .character-heading h1 strong {
-    font-size: .8em;
-}
+    .masthead .container .character-heading h1 strong {
+        font-size: .8em;
+    }
 }
 
 @media (max-width: 400px) {
     .masthead .container .character-heading h1 strong {
         font-size: .7em;
-        margin
     }
 }
 
