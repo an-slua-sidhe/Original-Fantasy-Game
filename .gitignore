@@ -3,3 +3,4 @@
 .vscode
 .env
 __pycache__
+templates/extra_content_source.html
