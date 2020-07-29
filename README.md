@@ -1,6 +1,7 @@
 
 
 (
+- Future features: feed character info into selected_character db and use that info to fill the fields in the gui, fighting modal, music and sound effects, items, full adventure
 - Remember to include section in Testing about Validation
 - Add Heroku to Deployment section.
 - Add database Schema to development section

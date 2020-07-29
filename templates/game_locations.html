@@ -49,13 +49,9 @@
                 
                                                 {% for image in locationImages %}
                 
-                                                <div class="carousel-item">
-                                                    <img src="{{ image.location_image }}" class="d-block w-100"
+                                                <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                                    <img src="{{ image.image_source }}" class="d-block w-100"
                                                         alt="Location Image {{ loop.index }}">
-                
-                                                    <div class="carousel-caption">
-                                                        <p>Location Image {{ loop.index }}</p>
-                                                    </div>
                                                 </div>
                 
                                                 {% endfor %}

@@ -169,7 +169,7 @@ def location_1():
 @app.route('/game_locations')
 def game_locations():
     return render_template('game_locations.html',
-                            locationImages=mongo.db.location_images)
+                            locationImages=mongo.db.location_images.find())
 
 
 # APP RUN
