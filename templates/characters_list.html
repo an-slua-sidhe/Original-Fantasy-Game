@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="col-12"><a class="ui-choice-btn btn btn-primary js-scroll-trigger"
-                        href="{{ url_for('create_class') }}">Create a New Character</a></div>
+                        href="{{ url_for('create_character') }}">Create a New Character</a></div>
             </div>
         </div>
     </div>
@@ -59,13 +59,9 @@
 
                                 <p class="mb-0 text-white-50">Gender: {{ character.gender }}</p>
 
-                                <p class="mb-0 text-white-50">Race: {{ character.race_name }}</p>
+                                <p class="mb-0 text-white-50">Race: {{ character.race_choice }}</p>
 
-                                <p class="mb-0 text-white-50">Race Modifier: {{ character.race_sta_mod }}</p>
-
-                                <p class="mb-0 text-white-50">Class: {{ character.class_name }}</p>
-
-                                <p class="mb-0 text-white-50">Class Modifier: {{ character.cla_sta_mod }}</p>
+                                <p class="mb-0 text-white-50">Class: {{ character.class_choice }}</p>
 
                                 <div class="crud-button-row row mt-3  d-none d-lg-block">
                                     <a class="crud-button col-4 p-2 btn btn-primary js-scroll-trigger"
@@ -117,7 +113,7 @@
                                 <h4 class="text-white">{{ character.character_name }}</h4>
 
                                 <p class="mb-0 text-white-50">
-                                    {{ character.character_information}}
+                                    {{ character.character_information }}
                                 </p>
 
                                 <hr class="mt-2 mb-2 ml-0">
@@ -126,13 +122,9 @@
 
                                 <p class="mb-0 text-white-50">Gender: {{ character.gender }}</p>
 
-                                <p class="mb-0 text-white-50">Race: {{ character.race_name }}</p>
+                                <p class="mb-0 text-white-50">Race: {{ character.race_choice }}</p>
 
-                                <p class="mb-0 text-white-50">Race Modifier: {{ character.race_sta_mod }}</p>
-
-                                <p class="mb-0 text-white-50">Class: {{ character.class_name }}</p>
-
-                                <p class="mb-0 text-white-50">Class Modifier: {{ character.cla_sta_mod }}, {{ character.cla_sta_mod }}</p>
+                                <p class="mb-0 text-white-50">Class: {{ character.class_choice }}</p>
 
                                 <div class="crud-button-row row mt-3  d-none d-lg-block">
                                     <a class="crud-button col-4 p-2 btn btn-primary js-scroll-trigger"

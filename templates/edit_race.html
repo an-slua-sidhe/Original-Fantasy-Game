@@ -28,8 +28,8 @@
                     <div class="form-group">
                         <label for="text-input">Race Information</label>
 
-                        <textarea name="class_information" class="form-control" id="text-input" rows="2"
-                            placeholder="Describe your race..." maxlength="100" value="{{ race.race_information }}"
+                        <textarea name="race_information" class="form-control" id="text-input" rows="2"
+                            placeholder="Describe your race..." maxlength="150" value="{{ race.race_information }}"
                             required>{{ race.race_information }}</textarea>
                     </div>
 
@@ -41,12 +41,45 @@
 
                         <select name="race_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             value="{{ race.race_stat_mod }}" required>
+                            <option {% if race.race_stat_mod == 'Stamina +2' %} selected {% endif %} value="Stamina +2">Stamina +2</option>
 
-                            <option value="Stamina +2 {% if race.race_stat_mod == 'Stamina +2' %} active {% endif %}">Stamina +2</option>
+                            <option {% if race.race_stat_mod == 'Stamina -2' %} selected {% endif %} value="Stamina -2">Stamina -2</option>
 
-                            <option value="Skill +2 {% if race.race_stat_mod == 'Skill +2' %} active {% endif %}">Skill +2</option>
+                            <option {% if race.race_stat_mod == 'Skill +2' %} selected {% endif %} value="Skill +2">Skill +2</option>
 
-                            <option value="Intelligence +2 {% if race.race_stat_mod == 'intelligence +2' %} active {% endif %}">Intelligence +2</option>
+                            <option {% if race.race_stat_mod == 'Skill -2' %} selected {% endif %} value="Skill -2">Skill -2</option>
+
+                            <option {% if race.race_stat_mod == 'Intelligence +2' %} selected {% endif %} value="Intelligence +2">Intelligence +2</option>
+                            
+                            <option {% if race.race_stat_mod == 'Intelligence -2' %} selected {% endif %} value="Intelligence -2">Intelligence -2</option>
+
+                            <option {% if race.race_stat_mod == 'Magic +2' %} selected {% endif %} value="Magic +2">Magic +2</option>
+
+                            <option {% if race.race_stat_mod == 'Magic -2' %} selected {% endif %} value="Magic -2">Magic -2</option>
+
+                            <option {% if race.race_stat_mod == 'Strength +2' %} selected {% endif %} value="Strength +2">Strength +2</option>
+
+                            <option {% if race.race_stat_mod == 'Strength -2' %} selected {% endif %} value="Strength -2">Strength -2</option>
+
+                            <option {% if race.race_stat_mod == 'Singing Voice +2' %} selected {% endif %} value="Singing Voice +2">Singing Voice +2</option>
+
+                            <option {% if race.race_stat_mod == 'Singing Voice -2' %} selected {% endif %} value="Singing Voice -2">Singing Voice -2</option>
+
+                            <option {% if race.race_stat_mod == 'Charisma +2' %} selected {% endif %} value="Charisma +2">Charisma +2</option>
+
+                            <option {% if race.race_stat_mod == 'Charisma -2' %} selected {% endif %} value="Charisma -2">Charisma -2</option>
+
+                            <option {% if race.race_stat_mod == 'Humour +2' %} selected {% endif %} value="Humour +2">Humour +2</option>
+
+                            <option {% if race.race_stat_mod == 'Humour -2' %} selected {% endif %} value="Humour -2">Humour -2</option>
+
+                            <option {% if race.race_stat_mod == 'Cooking +2' %} selected {% endif %} value="Cooking +2">Cooking +2</option>
+
+                            <option {% if race.race_stat_mod == 'Cooking -2' %} selected {% endif %} value="Cooking -2">Cooking -2</option>
+
+                            <option {% if race.race_stat_mod == 'Magnitude +2' %} selected {% endif %} value="Magnitude +2">Magnitude +2</option>
+
+                            <option {% if race.race_stat_mod == 'Magnitude -2' %} selected {% endif %} value="Magnitude -2">Magnitude -2</option>
                         </select>
                     </div>
 
@@ -70,7 +103,7 @@
                             </ol>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item {% if race.race_image == 'new_race_dragon' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_dragon' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_dragon.jpg" class="d-block w-100"
                                         alt="New Race Image 1">
 
@@ -79,7 +112,7 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item {% if race.race_image == 'new_race_tiger' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_tiger' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_tiger.jpg" class="d-block w-100"
                                         alt="New Race Image 2">
 
@@ -88,36 +121,36 @@
                                     </div>
                                 </div>
 
-                                <div class="carousel-item {% if race.race_image == 'new_race_slug' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_slug' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_slug.jpg" class="d-block w-100"
-                                        alt="New Class Image 3">
+                                        alt="New Race Image 3">
 
                                     <div class="carousel-caption">
                                         <p>Race Image 3</p>
                                     </div>
                                 </div>
 
-                                <div class="carousel-item {% if race.race_image == 'new_race_dwarf' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_dwarf' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_dwarf.jpg" class="d-block w-100"
-                                        alt="New Class Image 4">
+                                        alt="New Race Image 4">
 
                                     <div class="carousel-caption">
                                         <p>Race Image 4</p>
                                     </div>
                                 </div>
 
-                                <div class="carousel-item {% if race.race_image == 'new_race_griffin' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_griffin' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_griffin.jpg" class="d-block w-100"
-                                        alt="New Class Image 5">
+                                        alt="New Race Image 5">
 
                                     <div class="carousel-caption">
                                         <p>Race Image 5</p>
                                     </div>
                                 </div>
 
-                                <div class="carousel-item {% if race.race_image == 'new_race_lizard' %} active {% endif%}">
+                                <div class="carousel-item {% if race.race_image == 'new_race_lizard' %} active {% endif %}">
                                     <img src="/static/images/races/new_race_lizard.jpg" class="d-block w-100"
-                                        alt="New Class Image 6">
+                                        alt="New Race Image 6">
 
                                     <div class="carousel-caption">
                                         <p>Race Image 6</p>
@@ -140,23 +173,23 @@
                     </div>
 
                     <div class="form-group input-group mb-3">
-                        <label class="input-group-text" for="classImageSelect">Choose</label>
+                        <label class="input-group-text" for="raceImageSelect">Choose</label>
 
-                        <select name="class_image" class="custom-select" id="classImageSelect"
+                        <select name="race_image" class="custom-select" id="raceImageSelect"
                             value="{{ race.race_image }}" required>
                             <option value="">None</option>
 
-                            <option value="new_race_dragon">Race Image 1</option>
+                            <option {% if race.race_image == 'new_race_dragon' %} selected {% endif %} value="new_race_dragon">Race Image 1</option>
 
-                            <option value="new_race_tiger">Race Image 2</option>
+                            <option {% if race.race_image == 'new_race_tiger' %} selected {% endif %} value="new_race_tiger">Race Image 2</option>
 
-                            <option value="new_race_slug">Race Image 3</option>
+                            <option {% if race.race_image == 'new_race_slug' %} selected {% endif %} value="new_race_slug">Race Image 3</option>
 
-                            <option value="new_race_dwarf">Race Image 4</option>
+                            <option {% if race.race_image == 'new_race_dwarf' %} selected {% endif %} value="new_race_dwarf">Race Image 4</option>
 
-                            <option value="new_race_griffin">Race Image 5</option>
+                            <option {% if race.race_image == 'new_race_griffin' %} selected {% endif %} value="new_race_griffin">Race Image 5</option>
 
-                            <option value="new_race_lizard">Race Image 6</option>
+                            <option {% if race.race_image == 'new_race_lizard' %} selected {% endif %} value="new_race_lizard">Race Image 6</option>
                         </select>
                     </div>
 

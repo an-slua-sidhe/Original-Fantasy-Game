@@ -9,7 +9,7 @@
             <div class="row text-center mx-auto">
 
                 <!-- Create Character Form -->
-                <form action="{{ url_for('insert_class') }}" method="POST"
+                <form action="{{ url_for('insert_character') }}" method="POST"
                     class="needs-validation crud-form-bg col-10 col-md-8 mx-auto my-5">
 
                     <div class="query-text col-12">
@@ -19,39 +19,87 @@
                     <!-- Character Name -->
                     <div class="form-group">
                         <label for="input-name">Character Name</label>
+
                         <input type="text" name="character_name" class="form-control" id="input-name"
-                            placeholder="What is your character called?" maxlength="20" required>
+                            placeholder="What is your name?" maxlength="20" required>
                     </div>
 
                     <!-- Character Information -->
                     <div class="form-group">
                         <label for="text-input">Character Information</label>
 
-                        <textarea name="class_information" class="form-control" id="text-input" rows="2"
-                            placeholder="What does your class do?" maxlength="100" required></textarea>
+                        <textarea name="character_information" class="form-control" id="text-input" rows="2"
+                            placeholder="What is your story?" maxlength="300" required></textarea>
                     </div>
 
-                    <!-- Character Choice -->
-                    <p>Choose your Character</p>
+                    <!-- Gender Choice -->
+                    <p>Choose your Gender</p>
 
                     <div class="form-group input-group mb-3">
-                        <label class="input-group-text" for="statModifierSelect">Choose</label>
+                        <label class="input-group-text" for="genderSelect">Choose</label>
 
-                        <select name="class_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
-                            required>
+                        <select name="gender" class="custom-select" id="genderSelect" placeholder="Choose" required>
                             <option value="">None</option>
 
-                            <option value="Stamina +2">Stamina: +2</option>
+                            <option value="Male">Male</option>
 
-                            <option value="Skill +2">Skill: +2</option>
+                            <option value="Female">Female</option>
 
-                            <option value="Intelligence +2">Intelligence: +2</option>
+                            <option value="Neither">Neither</option>
+                        </select>
+                    </div>
+
+                    <!-- Class Choice -->
+                    <p>Choose your Class</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="classSelect">Choose</label>
+
+                        <select name="class_choice" class="custom-select" id="classSelect" placeholder="Choose" required>
+                            <option value="">None</option>
+
+                            <option value="Warrior (Strategy +2)">Warrior (Strategy +2)</option>
+
+                            <option value="Mage (Magic +2)">Mage (Magic +2)</option>
+
+                            <option value="Assassin (Stealth +2)">Assassin (Stealth +2)</option>
+
+                            {% for class in classes %}
+
+                            <option value="{{ class.class_name }} ({{ class.class_stat_mod }})"> {{ class.class_name }} ({{ class.class_stat_mod }}) </option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <!-- Race Choice -->
+                    <p>Choose your Race</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="raceSelect">Choose</label>
+
+                        <select name="race_choice" class="custom-select" id="raceSelect" placeholder="Choose" required>
+                            <option value="">None</option>
+
+                            <option value="Orc (Ferocity +2)">Orc (Ferocity +2)</option>
+
+                            <option value="Elf (Beauty +2)">Elf (Beauty +2)</option>
+
+                            <option value="Pixie (Mischievousness +2)">Pixie (Mischievousness +2)</option>
+
+                            {% for race in races %}
+
+                            <option value="{{ race.race_name }} ({{ race.race_stat_mod }})">{{ race.race_name }} ({{ race.race_stat_mod }})</option>
+
+                            {% endfor %}
+
                         </select>
                     </div>
 
                     <!-- New Class Image Choice Carousel -->
                     <div class="form-group mb-0 pb-3">
-                        <label for="carousel-images">Class Images</label>
+                        <label for="carousel-images">Profile Images</label>
 
                         <div id="carousel-images" class="carousel slide" data-interval="false">
                             <ol class="carousel-indicators">
@@ -66,23 +114,46 @@
                                 <li data-target="#carousel-images" data-slide-to="4"></li>
 
                                 <li data-target="#carousel-images" data-slide-to="5"></li>
-                            </ol>
 
+                                <li data-target="#carousel-images" data-slide-to="6"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="7"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="8"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="9"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="10"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="11"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="12"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="13"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="14"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="15"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="16"></li>
+
+                                <li data-target="#carousel-images" data-slide-to="17"></li>
+                            </ol>
                             <div class="carousel-inner">
 
-                                {% for image in newClassImages %}
+                                {% for image in newCharacterImages %}
 
                                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
-                                    <img src="{{ image.class_image }}" class="d-block w-100"
-                                        alt="New Class Image {{ loop.index }}">
+                                    <img src="{{ image.profile_image }}" class="d-block w-100"
+                                        alt="New Profile Image {{ loop.index }}">
 
                                     <div class="carousel-caption">
-                                        <p>Class Image {{ loop.index }}</p>
+                                        <p>Profile Image {{ loop.index }}</p>
                                     </div>
                                 </div>
 
                                 {% endfor %}
-                                
+
                             </div>
 
                             <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
@@ -100,27 +171,57 @@
                     </div>
 
                     <div class="form-group input-group mb-3">
-                        <label class="input-group-text" for="classImageSelect">Choose</label>
+                        <label class="input-group-text" for="profileImageSelect">Choose</label>
 
-                        <select name="class_image" class="custom-select" id="classImageSelect" required>
+                        <select name="profile_image" class="custom-select" id="profileImageSelect" required>
                             <option value="">None</option>
 
-                            <option value="new_class_healer">Class Image 1</option>
+                            <!-- {% for image in newCharacterImages %}
+                            
+                            <option value="{{ image.name }}">Profile Image {{ loop.index }}</option>
 
-                            <option value="new_class_thief">Class Image 2</option>
+                            {% endfor %} -->
 
-                            <option value="new_class_scholar">Class Image 3</option>
+                            <option value="elf_assassin_f">Profile Image 1</option>
 
-                            <option value="new_class_monk">Class Image 4</option>
+                            <option value="elf_assassin_m">Profile Image 2</option>
 
-                            <option value="new_class_bard">Class Image 5</option>
+                            <option value="elf_mage_f">Profile Image 3</option>
 
-                            <option value="new_class_automaton">Class Image 6</option>
+                            <option value="elf_mage_m">Profile Image 4</option>
+
+                            <option value="elf_warrior_f">Profile Image 5</option>
+
+                            <option value="elf_warrior_m">Profile Image 6</option>
+
+                            <option value="orc_assassin_f">Profile Image 7</option>
+
+                            <option value="orc_assassin_m">Profile Image 8</option>
+
+                            <option value="orc_mage_f">Profile Image 9</option>
+
+                            <option value="orc_mage_m">Profile Image 10</option>
+
+                            <option value="orc_warrior_f">Profile Image 11</option>
+
+                            <option value="orc_warrior_m">Profile Image 12</option>
+
+                            <option value="pix_assassin_f">Profile Image 13</option>
+
+                            <option value="pix_assassin_m">Profile Image 14</option>
+
+                            <option value="pix_mage_f">Profile Image 15</option>
+
+                            <option value="pix_mage_m">Profile Image 16</option>
+
+                            <option value="pix_warrior_f">Profile Image 17</option>
+
+                            <option value="pix_warrior_m">Profile Image 18</option>
                         </select>
                     </div>
 
                     <div class="col-12"><button type="submit"
-                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Class</button></div>
+                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Character</button></div>
                 </form>
             </div>
         </div>
