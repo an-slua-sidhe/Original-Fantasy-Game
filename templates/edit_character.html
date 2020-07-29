@@ -1,0 +1,391 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- CRUD Masthead -->
+<header>
+    <div class="crud-bg">
+        <div class="container align-items-center">
+            <div class="row text-center mx-auto">
+
+                <!-- Create Character Form -->
+                <form action="{{ url_for('update_character', character_id=character._id) }}" method="POST"
+                    class="needs-validation crud-form-bg col-10 col-md-8 mx-auto my-5">
+
+                    <div class="query-text col-12">
+                        <h1 class="mx-auto mb-4 mx-2 text-uppercase">Edit Your Character</h1>
+                    </div>
+
+                    <!-- Character Name -->
+                    <div class="form-group">
+                        <label for="input-name">Character Name</label>
+
+                        <input type="text" name="character_name" class="form-control" id="input-name"
+                            placeholder="What is your name?" maxlength="20" value="{{ character.character_name }}"required>
+                    </div>
+
+                    <!-- Character Information -->
+                    <div class="form-group">
+                        <label for="text-input">Character Information</label>
+
+                        <textarea name="character_information" class="form-control" id="text-input" rows="2"
+                            placeholder="What is your story?" maxlength="200" value="{{ character.character_information }}"required>{{ character.character_information }}</textarea>
+                    </div>
+
+                    <!-- Gender Choice -->
+                    <p>Choose your Gender</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="genderSelect">Choose</label>
+
+                        <select name="gender" class="custom-select" id="genderSelect" placeholder="Choose" value="{{ character.gender}}" required>
+                            <option {% if character.gender == 'Male' %} selected {% endif %} value="Male">Male</option>
+
+                            <option {% if character.gender == 'Female' %} selected {% endif %} value="Female">Female</option>
+
+                            <option {% if character.gender == 'Neither' %} selected {% endif %} value="Neither">Neither</option>
+                        </select>
+                    </div>
+
+                    <!-- Class Choice -->
+                    <p>Choose your Class</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="classSelect">Choose</label>
+
+                        <select name="class_choice" class="custom-select" id="classSelect" placeholder="Choose" value="{{ character.class_choice}}" required>
+                            <option {% if character.class_choice == 'Warrior (Strategy +2)' %} selected {% endif %} value="Warrior (Strategy +2)">Warrior (Strategy +2)</option>
+
+                            <option {% if character.class_choice == 'Mage (Magic +2)' %} selected {% endif %} value="Mage (Magic +2)">Mage (Magic +2)</option>
+
+                            <option {% if character.class_choice == 'Assassin (Stealth +2)' %} selected {% endif %} value="Assassin (Stealth +2)">Assassin (Stealth +2)</option>
+
+                            {% for class in classes %}
+
+                            <option {% if character.class_choice == '{{ class.class_name }} ({{ class.class_stat_mod }})' %} selected {% endif %} value="{{ class.class_name }} ({{ class.class_stat_mod }})"> {{ class.class_name }} ({{ class.class_stat_mod }}) </option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <!-- Race Choice -->
+                    <p>Choose your Race</p>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="raceSelect">Choose</label>
+
+                        <select name="race_choice" class="custom-select" id="raceSelect" placeholder="Choose" value="{{ character.race_choice}}"required>
+                            <option {% if character.race_choice == 'Orc (Ferocity +2)' %} selected {% endif %} value="Orc (Ferocity +2)">Orc (Ferocity +2)</option>
+
+                            <option {% if character.race_choice == 'Elf (Beauty +2)' %} selected {% endif %} value="Elf (Beauty +2)">Elf (Beauty +2)</option>
+
+                            <option {% if character.race_choice == 'Pixie (Mischievousness +2)' %} selected {% endif %} value="Pixie (Mischievousness +2)">Pixie (Mischievousness +2)</option>
+
+                            {% for race in races %}
+
+                            <option {% if character.race_choice == '{{ race.race_name }} ({{ race.race_stat_mod }})' %} selected {% endif %} value="{{ race.race_name }} ({{ race.race_stat_mod }})">{{ race.race_name }} ({{ race.race_stat_mod }})</option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <!-- New Profile Image Choice Carousel -->
+                    <div class="form-group mb-0 pb-3">
+                        <label for="carousel-images">Profile Images</label>
+
+                        <div id="carousel-images" class="carousel slide" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-images" data-slide-to="0" {% if character.profile_image == 'elf_assassin_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="1" {% if character.profile_image == 'elf_assassin_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="2" {% if character.profile_image == 'elf_mage_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="3" {% if character.profile_image == 'elf_mage_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="4" {% if character.profile_image == 'elf_warrior_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="5" {% if character.profile_image == 'elf_warrior_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="6" {% if character.profile_image == 'orc_assassin_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="7" {% if character.profile_image == 'orc_assassin_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="8" {% if character.profile_image == 'orc_mage_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="9" {% if character.profile_image == 'orc_mage_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="10" {% if character.profile_image == 'orc_warrior_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="11" {% if character.profile_image == 'orc_warrior_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="12" {% if character.profile_image == 'pix_assassin_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="13" {% if character.profile_image == 'pix_assassin_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="14" {% if character.profile_image == 'pix_mage_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="15" {% if character.profile_image == 'pix_mage_m' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="16" {% if character.profile_image == 'pix_warrior_f' %} class="active" {% endif %}></li>
+
+                                <li data-target="#carousel-images" data-slide-to="17" {% if character.profile_image == 'pix_warrior_m' %} class="active" {% endif %}></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+
+                                <!-- Unsuccessful attempt to template the image elements (/edit_character/ appended to each img url) -->
+                                <!-- {% for image in newCharacterImages %}
+
+                                <div class="carousel-item {% if character.profile_image == image.name %} active {% endif %}">
+                                    <img src="{{ image.profile_image }}" class="d-block w-100"
+                                        alt="New Profile Image {{ loop.index }}">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image {{ loop.index }}</p>
+                                    </div>
+                                </div>
+
+                                {% endfor %} -->
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_assassin_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_assassin_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 1">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 1</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_assassin_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_assassin_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 2">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 2</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_mage_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_mage_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 3">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 3</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_mage_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_mage_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 4">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 4</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_warrior_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_warrior_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 5">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 5</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'elf_warrior_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/elf_warrior_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 6">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 6</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'orc_assassin_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_assassin_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 7">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 7</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item {% if character.profile_image == 'orc_assassin_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_assassin_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 8">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 8</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'orc_mage_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_mage_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 9">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 9</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'orc_mage_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_mage_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 10">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 10</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'orc_warrior_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_warrior_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 11">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 11</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'orc_warrior_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/orc_warrior_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 12">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 12</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_assassin_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_assassin_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 13">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 13</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_assassin_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_assassin_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 14">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 14</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_mage_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_mage_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 15">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 15</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_mage_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_mage_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 16">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 16</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_warrior_f' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_warrior_f.jpg" class="d-block w-100"
+                                        alt="New Profile Image 17">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 17</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item {% if character.profile_image == 'pix_warrior_m' %} active {% endif %}">
+                                    <img src="/static/images/profiles/pix_warrior_m.jpg" class="d-block w-100"
+                                        alt="New Profile Image 18">
+
+                                    <div class="carousel-caption">
+                                        <p>Profile Image 18</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group mb-3">
+                        <label class="input-group-text" for="profileImageSelect">Choose</label>
+
+                        <select name="profile_image" class="custom-select" id="profileImageSelect" required>
+
+                            <!-- {% for image in newCharacterImages %}
+                            
+                            <option {% if image.profile_image == character.profile_image %} selected {% endif %} value="{{ image.name }}">Profile Image {{ loop.index }}</option>
+
+                            {% endfor %} -->
+
+                            <option {% if character.profile_image == 'elf_assassin_f' %} selected {% endif %} value="elf_assassin_f">Profile Image 1</option>
+
+                            <option {% if character.profile_image == 'elf_assassin_m' %} selected {% endif %} value="elf_assassin_m">Profile Image 2</option>
+
+                            <option {% if character.profile_image == 'elf_mage_f' %} selected {% endif %} value="elf_mage_f">Profile Image 3</option>
+
+                            <option {% if character.profile_image == 'elf_mage_m' %} selected {% endif %} value="elf_mage_m">Profile Image 4</option>
+
+                            <option {% if character.profile_image == 'elf_warrior_f' %} selected {% endif %} value="elf_warrior_f">Profile Image 5</option>
+
+                            <option {% if character.profile_image == 'elf_warrior_m' %} selected {% endif %}value="elf_warrior_m">Profile Image 6</option>
+
+                            <option {% if character.profile_image == 'orc_assassin_f' %} selected {% endif %} value="orc_assassin_f">Profile Image 7</option>
+
+                            <option {% if character.profile_image == 'orc_assassin_m' %} selected {% endif %} value="orc_assassin_m">Profile Image 8</option>
+
+                            <option {% if character.profile_image == 'orc_mage_f' %} selected {% endif %} value="orc_mage_f">Profile Image 9</option>
+
+                            <option {% if character.profile_image == 'orc_mage_m' %} selected {% endif %} value="orc_mage_m">Profile Image 10</option>
+
+                            <option {% if character.profile_image == 'orc_warrior_f' %} selected {% endif %} value="orc_warrior_f">Profile Image 11</option>
+
+                            <option {% if character.profile_image == 'orc_warrior_m' %} selected {% endif %} value="orc_warrior_m">Profile Image 12</option>
+
+                            <option {% if character.profile_image == 'pix_assassin_f' %} selected {% endif %} value="pix_assassin_f">Profile Image 13</option>
+
+                            <option {% if character.profile_image == 'pix_assassin_m' %} selected {% endif %} value="pix_assassin_m">Profile Image 14</option>
+
+                            <option {% if character.profile_image == 'pix_mage_f' %} selected {% endif %} value="pix_mage_f">Profile Image 15</option>
+
+                            <option {% if character.profile_image == 'pix_mage_m' %} selected {% endif %} value="pix_mage_m">Profile Image 16</option>
+
+                            <option {% if character.profile_image == 'pix_warrior_f' %} selected {% endif %} value="pix_warrior_f">Profile Image 17</option>
+
+                            <option {% if character.profile_image == 'pix_warrior_m' %} selected {% endif %} value="pix_warrior_m">Profile Image 18</option>
+                        </select>
+                    </div>
+                    <div class="align-content-center">
+                        <button class="col-4 crud-button p-3 btn btn-primary js-scroll-trigger" type="submit"
+                            name="action">Update</button>
+
+                        <a class="col-4 crud-button p-3 btn btn-secondary js-scroll-trigger"
+                            href="{{ url_for('get_characters') }}">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

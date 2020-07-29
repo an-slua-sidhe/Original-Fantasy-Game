@@ -135,9 +135,12 @@ def insert_character():
 
 @app.route('/edit_character/<character_id>')
 def edit_character(character_id):
-    return render_template('edit_character.html', 
-                            character=mongo.db.characters.find_one({'_id': ObjectId(character_id)}))
-
+    return render_template('edit_character.html',
+                            classes=mongo.db.classes.find(),
+                            races=mongo.db.races.find(),
+                            character=mongo.db.characters.find_one({'_id': ObjectId(character_id)}),
+                            newCharacterImages=mongo.db.profile_images.find())
+                            
 @app.route('/update_character/<character_id>', methods=["POST"])
 def update_character(character_id):
     characters = mongo.db.characters

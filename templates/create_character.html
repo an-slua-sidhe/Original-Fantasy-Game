@@ -29,7 +29,7 @@
                         <label for="text-input">Character Information</label>
 
                         <textarea name="character_information" class="form-control" id="text-input" rows="2"
-                            placeholder="What is your story?" maxlength="300" required></textarea>
+                            placeholder="What is your story?" maxlength="200" required></textarea>
                     </div>
 
                     <!-- Gender Choice -->
@@ -97,7 +97,7 @@
                         </select>
                     </div>
 
-                    <!-- New Class Image Choice Carousel -->
+                    <!-- New Profile Image Choice Carousel -->
                     <div class="form-group mb-0 pb-3">
                         <label for="carousel-images">Profile Images</label>
 
@@ -139,6 +139,7 @@
 
                                 <li data-target="#carousel-images" data-slide-to="17"></li>
                             </ol>
+                            
                             <div class="carousel-inner">
 
                                 {% for image in newCharacterImages %}
