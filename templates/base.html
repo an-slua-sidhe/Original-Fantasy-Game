@@ -44,10 +44,12 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-md-none"><a class="nav-link js-scroll-trigger"
                             href="{{ url_for('main_page') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('create_character') }}">New
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                            href="{{ url_for('create_character') }}">New
                             Character</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('get_characters') }}">Saved
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                            href="{{ url_for('get_characters') }}">Saved
                             Characters</a>
                     </li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('get_classes') }}">List
@@ -86,32 +88,42 @@
     <script src="/static/js/grayscale.js"></script>
 
     <!-- Javascript for Sweet Alert -->
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-    <!-- <script>
-        (function formSubmit(form) {
-            if (response) {
-                function success(response) {
-                    console.log("Email Sent!", response);
-                    swal({
-                        title: "Your Email was Sent!",
-                        text: "Thank you for contacting Elite Gourmet. \n We will be in touch with you shortly.",
-                        icon: "success",
-                        button: "Return to Site",
-                    });
-                }
-            } else {
-                function error(error) {
-                    console.log("Email Not Sent...", error);
-                    swal({
-                        title: "Ooops!",
-                        text: "We're sorry, there was an error! \n Please try again.",
-                        icon: "error",
-                        button: "Try Again",
-                    });
-                }
-            }
-        })
-    </script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        function success_alert() {
+            // event.preventDefault();
+            swal({
+                title: "Saved",
+                text: "",
+                icon: "success",
+                buttons: "Continue",
+            })
+            return true;
+        }
+
+        function delete_alert() {
+            event.preventDefault();
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                            icon: "success",
+                        });
+                        return true;
+                    } else {
+                        swal("This class remains...");
+                    }
+                });
+        }
+    </script>
+
 </body>
 
 </html>
