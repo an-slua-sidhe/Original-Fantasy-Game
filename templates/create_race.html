@@ -19,7 +19,7 @@
                     <!-- Race Name -->
                     <div class="form-group">
                         <label for="input-name">Race Name</label>
-                        
+
                         <input type="text" name="race_name" class="form-control" id="input-name"
                             placeholder="What is your race called?" maxlength="20" required>
                     </div>
@@ -40,6 +40,8 @@
 
                         <select name="race_stat_mod" class="custom-select" id="statModifierSelect" placeholder="Choose"
                             required>
+                            <option value="">None</option>
+
                             <option value="Stamina +2">Stamina +2</option>
 
                             <option value="Stamina -2">Stamina -2</option>
@@ -116,42 +118,44 @@
 
                                 {% endfor %}
 
-                            <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <a class="carousel-control-prev" href="#carousel-images" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
-                                <span class="sr-only">Previous</span>
-                            </a>
+                                    <span class="sr-only">Previous</span>
+                                </a>
 
-                            <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <a class="carousel-control-next" href="#carousel-images" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
-                                <span class="sr-only">Next</span>
-                            </a>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group input-group mb-3">
-                        <label class="input-group-text" for="raceImageSelect">Choose</label>
+                        <div class="form-group input-group mb-3">
+                            <label class="input-group-text" for="raceImageSelect">Choose</label>
 
-                        <select name="race_image" class="custom-select" id="raceImageSelect" required>
-                            <option value="">None</option>
+                            <select name="race_image" class="custom-select" id="raceImageSelect" required>
+                                <option value="">None</option>
 
-                            <option value="new_race_dragon">Race Image 1</option>
+                                <option value="new_race_dragon">Race Image 1</option>
 
-                            <option value="new_race_tiger">Race Image 2</option>
+                                <option value="new_race_tiger">Race Image 2</option>
 
-                            <option value="new_race_slug">Race Image 3</option>
+                                <option value="new_race_slug">Race Image 3</option>
 
-                            <option value="new_race_dwarf">Race Image 4</option>
+                                <option value="new_race_dwarf">Race Image 4</option>
 
-                            <option value="new_race_griffin">Race Image 5</option>
+                                <option value="new_race_griffin">Race Image 5</option>
 
-                            <option value="new_race_lizard">Race Image 6</option>
-                        </select>
-                    </div>
+                                <option value="new_race_lizard">Race Image 6</option>
+                            </select>
+                        </div>
 
-                    <div class="col-12"><button type="submit" onclick="success_alert()"
-                            class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Race</button></div>
+                        <div class="col-12"><button type="submit"
+                                class="ui-choice-btn btn btn-primary js-scroll-trigger">Save Race</button></div>
                 </form>
             </div>
         </div>

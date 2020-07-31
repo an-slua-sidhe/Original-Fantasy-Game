@@ -55,7 +55,8 @@
                     <div class="form-group input-group mb-3">
                         <label class="input-group-text" for="classSelect">Choose</label>
 
-                        <select name="class_choice" class="custom-select" id="classSelect" placeholder="Choose" required>
+                        <select name="class_choice" class="custom-select" id="classSelect" placeholder="Choose"
+                            required>
                             <option value="">None</option>
 
                             <option value="Warrior (Strategy +2)">Warrior (Strategy +2)</option>
@@ -66,7 +67,8 @@
 
                             {% for class in classes %}
 
-                            <option value="{{ class.class_name }} ({{ class.class_stat_mod }})"> {{ class.class_name }} ({{ class.class_stat_mod }}) </option>
+                            <option value="{{ class.class_name }} ({{ class.class_stat_mod }})"> {{ class.class_name }}
+                                ({{ class.class_stat_mod }}) </option>
 
                             {% endfor %}
 
@@ -90,7 +92,8 @@
 
                             {% for race in races %}
 
-                            <option value="{{ race.race_name }} ({{ race.race_stat_mod }})">{{ race.race_name }} ({{ race.race_stat_mod }})</option>
+                            <option value="{{ race.race_name }} ({{ race.race_stat_mod }})">{{ race.race_name }}
+                                ({{ race.race_stat_mod }})</option>
 
                             {% endfor %}
 
@@ -139,7 +142,7 @@
 
                                 <li data-target="#carousel-images" data-slide-to="17"></li>
                             </ol>
-                            
+
                             <div class="carousel-inner">
 
                                 {% for image in newCharacterImages %}
@@ -177,6 +180,7 @@
                         <select name="profile_image" class="custom-select" id="profileImageSelect" required>
                             <option value="">None</option>
 
+                            <!-- Attempt to simplify code with JinJa, didn't work -->
                             <!-- {% for image in newCharacterImages %}
                             
                             <option value="{{ image.name }}">Profile Image {{ loop.index }}</option>
@@ -222,7 +226,7 @@
                     </div>
 
                     <div class="align-content-center">
-                        <button class="col-4 crud-button p-3 btn btn-primary js-scroll-trigger" type="submit" onclick="success_alert()"
+                        <button class="col-4 crud-button p-3 btn btn-primary js-scroll-trigger" type="submit"
                             name="action">Save</button>
 
                         <a class="col-4 crud-button p-3 btn btn-secondary js-scroll-trigger"

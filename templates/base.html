@@ -64,11 +64,45 @@
         </div>
     </nav>
 
-    <!-- Code for Content Template Routing -->
+
+
+    <!-- JinJa for Content Template Routing -->
     <div id="block-content-container">
+
+        <!-- JinJa for Flash Messages -->
+        <!-- {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+
+        {% for message in messages %}
+
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+        </div>
+
+        <div id="flash-container" >
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+        </div>
+        
+        {{ message }}
+
+        {% endfor %}
+
+        {% endif %}
+
+        {% endwith %} -->
+
+
         {% block content %}
 
         {% endblock %}
+
     </div>
 
     <!-- Footer -->
@@ -86,44 +120,6 @@
 
     <!-- Core theme JS -->
     <script src="/static/js/grayscale.js"></script>
-
-    <!-- Javascript for Sweet Alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <script>
-        function success_alert() {
-            // event.preventDefault();
-            swal({
-                title: "Saved",
-                text: "",
-                icon: "success",
-                buttons: "Continue",
-            })
-            return true;
-        }
-
-        function delete_alert() {
-            event.preventDefault();
-            swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this imaginary file!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Poof! Your imaginary file has been deleted!", {
-                            icon: "success",
-                        });
-                        return true;
-                    } else {
-                        swal("This class remains...");
-                    }
-                });
-        }
-    </script>
-
 </body>
 
 </html>

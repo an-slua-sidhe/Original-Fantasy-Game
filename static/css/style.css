@@ -1,21 +1,3 @@
-/* base.html Styles */
-
-/* Navbar  */
-
-.nav-link {
-    text-align: center;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-}
-
-body #block-content-container {
-    margin: 0;
-    padding: 0;
-}
-
-
 /* General Styles */
 
 .masthead .container .query-text {
@@ -32,6 +14,40 @@ body #block-content-container {
     width: 30%;
     margin-top: 3em;
     margin-bottom: 0;
+}
+
+/* Flash Messenger */
+
+/* #flash-container {
+    background: none;
+}
+
+#flash-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#flash-messenger {
+    margin-bottom: -20em;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 10em;
+    height: 7em;
+} */
+
+
+/* Navbar  */
+
+.nav-link {
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+body #block-content-container {
+    margin: 0;
+    padding: 0;
 }
 
 /* Main Page */
@@ -177,14 +193,17 @@ body #block-content-container {
 }
 
 #location-art-carousel {
-    padding: 2em;
+    padding: 1.5em;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+#location-art-carousel .form-group {
+}
+
 #location-art-carousel .carousel-inner .carousel-item img {
-    height: 30em;
-    width: 14em;
+    height: auto;
+    width: auto;
     margin-left: 0;
     margin-right: 0;
 }
@@ -286,6 +305,12 @@ body #block-content-container {
 
     .crud-form-bg .form-group {
         width: 90%
+    }
+
+    /* Game Pages */
+    #location-art-carousel {
+        padding: 0.4em;
+        border-radius: 5px;
     }
 }
 
