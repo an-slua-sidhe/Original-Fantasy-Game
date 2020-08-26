@@ -98,7 +98,7 @@ ___
 
 ## **User Experience**
 
-**Original Fantasy Game™** was conceived as an atmospheric fantasy adventure, with corresponding art and design. It was designed with both mobile and desktop in mind, as opposed to mobile first, as it's appeal to users would be split between the two. The fantastic artwork would clearly suit larger resolutions better. I sought to create a smooth and atmospheric UX, where the fantasy atmosphere could be felt in the colours scheme, art and navigation. To achieve this, I chose a template from [**Start Bootstrap**](https://startbootstrap.com/) which I felt could embody this atmosphere, called [**Grayscale**](https://startbootstrap.com/themes/grayscale/). I then amended this template in several places to suit the site.
+**Original Fantasy Game™** was conceived as an atmospheric fantasy adventure, with corresponding art and design. It was designed with both mobile and desktop in mind, as opposed to mobile first, as it's appeal to users would be split between the two. The fantastic artwork would clearly suit larger resolutions better. I sought to create a smooth and atmospheric UX, where the fantasy atmosphere could be felt in the colours scheme, art and navigation. To achieve this, I chose a theme from [**Start Bootstrap**](https://startbootstrap.com/) which I felt could embody this atmosphere, called [**Grayscale**](https://startbootstrap.com/themes/grayscale/). I then amended this theme in several places to suit the site.
 
 ### **User Stories**
 
@@ -148,7 +148,7 @@ The database in this project was non-relational, and therefore the actual schema
 
 ### **Design Choices**
 
-I used a Start Bootstrap template to make this site called [Grayscale](https://startbootstrap.com/themes/grayscale/) (live site [here](https://startbootstrap.github.io/startbootstrap-grayscale/)). The mood and interplay between the template elements seemed perfect for my project, particularly the Navbar and footer and general component stylings. The template needs its [**Grayscale CSS**](static/css/grayscale.css) and [**JavaScript**](static/js/grayscale.js) to work, and I changed and added to these with my own [**CSS**](static/css/style.css).
+I used a Start Bootstrap theme to make this site called [Grayscale](https://startbootstrap.com/themes/grayscale/) (live site [here](https://startbootstrap.github.io/startbootstrap-grayscale/)). The mood and interplay between the theme elements seemed perfect for my project, particularly the Navbar and footer and general component stylings. The theme needs its [**Grayscale CSS**](static/css/grayscale.css) and [**JavaScript**](static/js/grayscale.js) to work, and I changed and added to these with my own [**CSS**](static/css/style.css).
 
 #### Images
 
@@ -156,7 +156,7 @@ I wanted a selection of high quality fantasy images for the site, which were atm
 
 #### Colours
 
-I combined the **Grayscale Template** colour scheme with the art I had prepared to create my colour pallete. The elements colours gelled well with the [**Main Screen Background**](static/images/misc/main_page_bg.pdf) and the other art. In particular I made use of the Grayscale Button colour in the drop-down on scroll Navbar background for larger res, which complimented the art nicely. I altered various hover effect colours on elements to work with this. An opaque background colour was used in various elements to make text visible.
+I combined the **Grayscale Theme** colour scheme with the art I had prepared to create my colour palette. The elements colours gelled well with the [**Main Screen Background**](static/images/misc/main_page_bg.pdf) and the other art. In particular I made use of the Grayscale Button colour in the drop-down on scroll Navbar background for larger res, which complimented the art nicely. I altered various hover effect colours on elements to work with this. An opaque background colour was used in various elements to make text visible.
 
 The colours used for the site are:
 
@@ -170,7 +170,7 @@ The colours used for the site are:
 
 #### Fonts
 
-The fonts I used were mostly from the [**Grayscale Template**] such as **Great Vibes** **Varela Round**. The template  gets these from [**Google Fonts**](https://fonts.google.com/). I used basic **Serif** for the headings on the CRUD pages, as it suited the more gothic look of the [**CRUD Pages Background Image**](static/images/misc/crud_screen_bg.pdf).
+The fonts I used were mostly from the [**Grayscale Theme**] such as **Great Vibes** **Varela Round**. The theme gets these from [**Google Fonts**](https://fonts.google.com/). I used basic **Serif** for the headings on the CRUD pages, as it suited the more gothic look of the [**CRUD Pages Background Image**](static/images/misc/crud_screen_bg.pdf).
 
 #### Icons
 
@@ -194,7 +194,7 @@ This the is main template for the site, which contains the Head and Footer and N
 
 * **Navbar**  
 
-   This Navbar is the fully responsive **Grayscale Template** navigation element, with some style changes. I ammended the code with my own **CSS** to change the Navbar colours (text and background) on larger resolutions, and gave the links a longer hover transition. It contains links to the following screens: **Home**, **New Character**, **Saved Characters**, **List of Classes**, **List of Races** and **New Game**. As the main title does not display on smaller resolutions thanks to the Grayscale code (becoming a **Burgerbun** icon instead) I wrote code to include a **Home** link on smaller resolutions.
+   This Navbar is the fully responsive **Grayscale Theme** navigation element, with some style changes. I amended the code with my own **CSS** to change the Navbar colours (text and background) on larger resolutions, and gave the links a longer hover transition. It contains links to the following screens: **Home**, **New Character**, **Saved Characters**, **List of Classes**, **List of Races** and **New Game**. As the main title does not display on smaller resolutions thanks to the Grayscale code (becoming a **Burgerbun** icon instead) I wrote code to include a **Home** link on smaller resolutions.
 
 * **Footer**  
 
@@ -612,7 +612,7 @@ ___
 
 ### **Code Used**
 
-* **Grayscale Start Bootstrap Template**  
+* **Grayscale Start Bootstrap Theme**  
     Source: https://startbootstrap.com/themes/grayscale/
     Live Site: https://startbootstrap.github.io/startbootstrap-grayscale/
 
