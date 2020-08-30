@@ -16,6 +16,15 @@
     margin-bottom: 0;
 }
 
+.page-topper {
+    height: 2em;
+
+}
+
+.game-heading-text h1 {
+    font-size: 4em;
+}
+
 /* Flash Messenger */
 
 /* #flash-container {
@@ -198,8 +207,7 @@ body #block-content-container {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-#location-art-carousel .form-group {
-}
+#location-art-carousel .form-group {}
 
 #location-art-carousel .carousel-inner .carousel-item img {
     height: auto;
