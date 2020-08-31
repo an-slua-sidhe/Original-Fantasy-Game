@@ -1,10 +1,10 @@
-# **ORIGINAL FANTASY GAME&trade;**
+# **ORIGINAL FANTASY GAME&trade; **
 
 ![Original Fantasy Game Banner Logo](static/images/misc/banner_1.png "Original Fantasy Game Banner Logo")
 
 ## **Introduction**
 
-This is the repository for the **ORIGINAL FANTASY GAME&trade;** website.
+This is the repository for the **ORIGINAL FANTASY GAME&trade; ** website.
 
 The deployed site can be visited by clicking [**here**](https://pq-original-fantasy-game.herokuapp.com/).
 
@@ -16,29 +16,27 @@ This project contains the main menu and CRUD functionality of the game, along wi
 
 There is a full overview of the design/development process below, along with an extensive outline of the testing process, future features, user stories, responsivity and deployment.
 
-<!-- To be completed: Vaidation feedback statements; check if repo folder and file links work; secret_key and .env info for deployment section? -->
-
 ## **Table of Contents**
 
 1. [User Experience](#user-experience)
-    * [User Stories](#user-stories)
+    - [User Stories](#user-stories)
         * [The Gamer](#the-gamer)
         * [The Gamebook Fan](#the-gamebook-fan)
         * [The Developer](#the-developer)
         * [The Critic](#the-critic)
-    * [Design Documents](#design-documents)
+    - [Design Documents](#design-documents)
         * [Basic Wireframes](#basic-wireframes)
         * [Full Asset Mockups](#full-asset-mockups)
         * [Database Schema](#database-schema)
-    * [Design Choices](#design-choices)
+    - [Design Choices](#design-choices)
         * [Images](#images)
         * [Colours](#colours)
         * [Fonts](#fonts)
         * [Icons](#icons)
-    * [Design Changes](#design-changes)
+    - [Design Changes](#design-changes)
 
 2. [Features](#features)
-    * [Existing Features](#existing-features)
+    - [Existing Features](#existing-features)
         * [Base HTML](#base-html)
         * [Main Page](#main-page)
         * [List of Classes/Races/Characters](#list-of-classes/races/characters)
@@ -49,16 +47,16 @@ There is a full overview of the design/development process below, along with an 
         * [Game Location 1](#game-location-1)
         * [Game Art Page](#game-art-page)
         * [Footer](#footer)
-    * [Future Features](#future-features)
+    - [Future Features](#future-features)
 
 3. [Technologies Used](#technologies-used)
 
 4. [Testing](#testing)
-    * [Testing Devices](#testing-devices)
+    - [Testing Devices](#testing-devices)
         * [Mobile Devices](#mobile-devices)
         * [Laptop Devices](#laptop-devices)
         * [Desktop Devices](#desktop-devices)
-    * [Developer Tools](#developer-tools)
+    - [Developer Tools](#developer-tools)
         * [Chrome](#chrome)
         * [Firefox](#firefox)
         * [Opera](#opera)
@@ -68,31 +66,31 @@ There is a full overview of the design/development process below, along with an 
         * [Mobile Resolutions](#mobile-resolutions)
         * [Tablet Resolutions](#tablet-resolutions)
         * [Desktop Resolutions](#desktop-resolutions)
-    * [Media Queries](#media-queries)
-    * [BrowserStack](#browserStack)
-    * [Validation](#validation)
+    - [Media Queries](#media-queries)
+    - [BrowserStack](#browserStack)
+    - [Validation](#validation)
         * [HTML](#html)
         * [CSS](#css)
         * [JavaScript](#javascript)
         * [Python](#python)
         * [ARIA](#aria)
-    * [User Scenarios](#user-scenarios)
+    - [User Scenarios](#user-scenarios)
         * [Gamer looking to start a new game](#gamer-looking-to-start-a-new-game)
         * [Gamer looking create a new Class/Race/Character](#gamer-looking-create-a-new-class/race/character)
         * [Gamer looking edit a Class/Race/Character](#gamer-looking-edit-a-class/race/character)
         * [Fantasy gamebook fan seeking to browse the game art](#fantasy-gamebook-fan-seeking-to-browse-the-game-art)
         * [Game reviewer looking to review the game](#game-reviewer-looking-for-a-product-to-review)
-    * [Outstanding Bugs](#outstanding-bugs)
+    - [Outstanding Bugs](#outstanding-bugs)
 
 5. [Deployment](#deployment)
-    * [Local](#local)
-    * [Remote](#remote)
-    * [Heroku](#heroku)
+    - [Local](#local)
+    - [Remote](#remote)
+    - [Heroku](#heroku)
 
 6. [Credits](#credits)
-    * [Code Used](#code-used)
-    * [Images Used](#images-used)
-    * [Acknowledgements](#acknowledgements)
+    - [Code Used](#code-used)
+    - [Images Used](#images-used)
+    - [Acknowledgements](#acknowledgements)
 
 ___
 
@@ -286,10 +284,6 @@ All the technologies used to create this project are listed below, along with th
 
 [**Start Bootstrap**](https://startbootstrap.com/) - I sourced my website template from this site.
 
-<!-- [**SweetAlert**](https://sweetalert.js.org/guides/) - I found a dynamic alert for the **Contact Form** on SweetAlert's website. -->
-
-<!-- Maybe delete SWeet ALert ref?? -->
-
 ### **Design**
 
 [**Adobe XD**](https://www.adobe.com/ie/products/xd.html) - The wireframes and mockups for this site were designed in **Adobe XD**.
@@ -386,27 +380,62 @@ There are 8 separate **Media Query** resolution denominations in the [**CSS**](s
 
 ### **Validation**
 
-<!-- To be completed at the end! PQ -->
+* [**HTML Code Checker**](https://validator.w3.org) - I checked my HTML with the **W3C Markup Validation Service**. It received the following messages:
 
-* [**HTML Code Checker**](https://validator.w3.org) - I checked my HTML with the **W3C Markup Validation Service**. It received the following message:
+  - Several "Error: Bad value for attribute href on element link: Illegal character in path segment: { is not allowed" warnings, for Jinja template language code across all HTML documents.
 
-??? <!-- To be completed at the end! PQ -->
+  - A "Warning: Consider adding a lang attribute to the html start tag to declare the language of this document" for each template besides base.html.
 
-* [**CSS Code Checker**](https://jigsaw.w3.org/css-validator) - I checked my CSS with the **W3C CSS Validation Service**. It received the following message:
+  - An "Error: End of file seen without seeing a doctype first. Expected ! DOCTYPE html" for each template besides base.html.
 
-??? <!-- To be completed at the end! PQ -->
+  - An "Error: Element head is missing a required instance of child element title" for each template besides base.html.
 
-* [**CSS Auto-prefixer**](https://autoprefixer.github.io) - The **CSS Online Auto-prefixer** provided a **Vendor Prefix** check for my code. It received the following message:
+  - A "Warning: The first occurrence of ID delete_class was here" for each html document that have jinja urls that match element ids.
+  
+* [**CSS Code Checker**](https://jigsaw.w3.org/css-validator) - I checked my CSS with the **W3C CSS Validation Service**. It received the following messages for vendor prefixes unknown to the validator:
 
-??? <!-- To be completed at the end! PQ -->
+  - Style.css:
+    - Line 33: "moz-transition is an unknown vendor extension".
 
-* [**Javascript Code Checker**](https://jshint.com/) - I checked my Javascript with the **JS Hint**. It received the following message:
+    - Line 34: "webkit-transition is an unknown vendor extension".
 
-??? <!-- To be completed at the end! PQ -->
+    - Line 35: "o-transition is an unknown vendor extension".
 
-* [**ARIA Checker**](http://wave.webaim.org/) - I used **Wave** (Web Accessibility Evaluation Tool) to check that my code was accessible to all users.  It received the following message:
+    - Line 121: "moz-transition is an unknown vendor extension".
 
-??? <!-- To be completed at the end! PQ -->
+    - Line 122: "webkit-transition is an unknown vendor extension".
+
+    - Line 123: "o-transition is an unknown vendor extension".
+
+  - Grayscale.css:
+    - 34 Errors; Mostly parse errors, with 2 property and one value error.
+
+    - 225 Warnings; For vendor prefixes unknown to the validator, for duplicate colour selection for one element, and for pseudo-elements unknown to the validator.
+
+* [**CSS Auto-prefixer**](https://autoprefixer.github.io) - The **CSS Online Auto-prefixer** provided a **Vendor Prefix** check for my code. I added all suggestions to my CSS.
+
+* [**Javascript Code Checker**](https://jshint.com/) - I checked the JavaScript in grayscale.js with **JS Hint**. It received the following messages:
+
+  - Metrics:
+    - "There are 4 functions in this file".
+
+    - "Function with the largest signature take 1 arguments, while the median is 0".
+
+    - "Largest function has 6 statements in it, while the median is 4.5".
+
+    - "The most complex function has a cyclomatic complexity value of 5 while the median is 1.5".
+
+  - One warning
+    - "Line 18; Misleading line break before '?'; readers may interpret this as an expression boundary".
+
+  - One undefined variable:
+    - "Line 56; jQuery"
+
+* [**ARIA Checker**](http://wave.webaim.org/) - I used **Wave** (Web Accessibility Evaluation Tool) to check that my code was accessible to all users.  It received the following messages:
+
+  - 30 x Contrast Errors (Mostly reffering to the black background of the list pages and the main button colour on the landing page background)
+  - 10 x Alerts for Redundant Links (All of which were legitimate links)
+  - 15 x Suspicious Alternative Text (Referring to Fantasy names unknown to the validator)
 
 ### **User Scenarios**
 
@@ -485,20 +514,6 @@ There are 8 separate **Media Query** resolution denominations in the [**CSS**](s
 2. Read the current update on the game in the **Game Location 1** screen.
 3. Come back later to review the actual game.
 
-### **Outstanding Bugs**
-
-#### Mobile Bugs
-
-* **Galaxy A5 Using Android** - **??**  
-
-    None? <!-- To be completed at the end! PQ -->
-
-#### Desktop Bugs
-
-* **Internet Explorer** - **??**  
-
-    None? <!-- To be completed at the end! PQ -->
-
 ___
 
 ## **Deployment**
@@ -513,19 +528,24 @@ ___
     3. If using [**Github Desktop**](https://desktop.github.com), chose to *Open in Desktop*.
     4. If you want to **Clone** the files into a **Git** repository, chose to copy the URL from the same menu (# 2.). Open your chosen **Command Line Interface** (**CLI**, e.g. [**Gitbash**](https://git-scm.com/downloads)) and use the following command:
 
-        ```bash
+
+        ``` bash
         git clone https://github.com/an-slua-sidhe/milestone-3.git
         ```
 
     5. To set up the files manually in a local repository, chose to **Download ZIP** and remove the files from the ZIP folder. Place them into the chosen location. If desired, set up a **Git** repository in this folder in your **CLI** with the following command:
 
-        ```bash
+        
+
+        ``` bash
         git init
         ```
 
     6. You can check the state of your repository after initialising it by using this command:
 
-        ```bash
+        
+
+        ``` bash
         git status
         ```
 
@@ -535,7 +555,8 @@ ___
 
     1. After using the command 'git status' (see step 6 above) in the command line, check that the console reads:
 
-        ```bash
+
+        ``` bash
         Nothing to commit
         working tree clean
         ```
@@ -546,20 +567,20 @@ ___
 
     4. You can now choose a few different ways to link the local and remote repositories. The one we want here is "…*or push an existing repository from the command line*". Copy the code this option gives you and paste it into your command line. It should look something like this:
 
-        ```bash
+        ``` bash
         git remote add origin https://github.com/an-slua-sidhe/milestone-2
         git push -u origin master
         ```
 
     5. Now you can push any changes from the command line with:
 
-        ```bash
+        ``` bash
         git push
         ```
 
     6. If you check the status of of your local repository now (using 'git status') it should give you something like this:
 
-        ```bash
+        ``` bash
         On branch master
         Your branch is up-to-date with 'origin/master'.
         nothing to commit, working tree clean
@@ -573,7 +594,7 @@ ___
 
     1. Following on from **Local** deployment step 6 above, type the command 'git status' in the command line and check that the console reads:
 
-        ```bash
+        ``` bash
         Nothing to commit
         working tree clean
         ```
@@ -584,7 +605,7 @@ ___
 
     4. Next, login to your Heroku account from your CLI using:
 
-        ```bash
+        ``` bash
         heroku login
         ```
 
@@ -592,13 +613,14 @@ ___
 
     5. Link your existing Git repository to Heroku by adding Heroku as a remote repository:
 
-        ```bash
+
+        ``` bash
         heroku git:remote -a <project-name>
         ```
 
     6. From now on you can push your code from the CLI with:
 
-        ```bash
+        ``` bash
         git push heroku master
         ```
 
@@ -613,6 +635,7 @@ ___
 ### **Code Used**
 
 * **Grayscale Start Bootstrap Theme**  
+
     Source: https://startbootstrap.com/themes/grayscale/
     Live Site: https://startbootstrap.github.io/startbootstrap-grayscale/
 
@@ -625,7 +648,7 @@ Except where stated, all rights for the images used lies with their respective o
 * Two fighting Fantasu gamebook covers were used: [Forest of Doom](https://en.wikipedia.org/wiki/The_Forest_of_Doom) and [Deathtrap Dungeon](https://en.wikipedia.org/wiki/Deathtrap_Dungeon)
 * The **Main Page Background** was created by [**Roger Dean**](https://www.rogerdean.com/)
 * The Class image of the Thief comes from the game of the same name by [**Looking Glass Studios**](https://en.wikipedia.org/wiki/Thief:_The_Dark_Project)
-* The Class image of the Warrior is by Simon Bisley, and comes from the 2000 A.D. comic [**Sláine**](https://en.wikipedia.org/wiki/Sl%C3%A1ine_(comics)) by Pat Mills.
+* The Class image of the Warrior is by Simon Bisley, and comes from the 2000 A. D. comic [**Sláine**](https://en.wikipedia.org/wiki/Sl%C3%A1ine_(comics)) by Pat Mills.
 * I have also used my own assets in this project (e.g. the *CRUD Screen* background).
 
 ### **Acknowledgements**

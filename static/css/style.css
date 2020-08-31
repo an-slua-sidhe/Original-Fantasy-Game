@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* General Styles */
 
 .masthead .container .query-text {
@@ -24,25 +31,6 @@
 .game-heading-text h1 {
     font-size: 4em;
 }
-
-/* Flash Messenger */
-
-/* #flash-container {
-    background: none;
-}
-
-#flash-row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-#flash-messenger {
-    margin-bottom: -20em;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 10em;
-    height: 7em;
-} */
-
 
 /* Navbar  */
 
@@ -108,6 +96,8 @@ body #block-content-container {
     width: 100%;
     min-height: 35rem;
     padding: 10rem 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(121, 34, 34, 0.2)), color-stop(75%, rgba(0, 0, 0, 0)), to(#000000)), url("/static/images/misc/crud_screen_bg.jpg");
+    background: -o-linear-gradient(top, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/misc/crud_screen_bg.jpg");
     background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/misc/crud_screen_bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -164,6 +154,8 @@ body #block-content-container {
     width: 100%;
     min-height: 35rem;
     padding: 10rem 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(121, 34, 34, 0.2)), color-stop(75%, rgba(0, 0, 0, 0)), to(#000000)), url("/static/images/locations/beginning_path.jpg");
+    background: -o-linear-gradient(top, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/beginning_path.jpg");
     background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/beginning_path.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -178,6 +170,8 @@ body #block-content-container {
     width: 100%;
     min-height: 35rem;
     padding: 10rem 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(121, 34, 34, 0.2)), color-stop(75%, rgba(0, 0, 0, 0)), to(#000000)), url("/static/images/locations/castle_in_distance.jpg");
+    background: -o-linear-gradient(top, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/castle_in_distance.jpg");
     background: linear-gradient(to bottom, rgba(121, 34, 34, 0.2) 0%, rgba(0, 0, 0, 0) 75%, #000000 100%), url("/static/images/locations/castle_in_distance.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -364,7 +358,9 @@ body #block-content-container {
     }
 
     /* List of Classes/Races Pages */
-    .rud-button-row {
+    .crud-button-row {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 

@@ -45,16 +45,6 @@ def insert_class():
     classes.insert_one(request.form.to_dict())
     return redirect(url_for('get_classes'))
 
-# Attempt to use Flash messages in a route
-# @app.route('/insert_class', methods=['POST'])
-# def insert_class():
-#     if request.method == 'POST':
-#         classes =  mongo.db.classes
-#         classes.insert_one(request.form.to_dict())
-#         flash('Your class has been saved!', 'success')
-#         return redirect(url_for('get_classes'))
-#     return redirect(url_for('get_classes'))
-
 @app.route('/edit_class/<class_id>')
 def edit_class(class_id):
     return render_template('edit_class.html', 

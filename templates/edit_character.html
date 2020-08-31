@@ -136,20 +136,6 @@
 
                             <div class="carousel-inner">
 
-                                <!-- Unsuccessful attempt to template the image elements (/edit_character/ appended to each img url) -->
-                                <!-- {% for image in newCharacterImages %}
-
-                                <div class="carousel-item {% if character.profile_image == image.name %} active {% endif %}">
-                                    <img src="{{ image.profile_image }}" class="d-block w-100"
-                                        alt="New Profile Image {{ loop.index }}">
-
-                                    <div class="carousel-caption">
-                                        <p>Profile Image {{ loop.index }}</p>
-                                    </div>
-                                </div>
-
-                                {% endfor %} -->
-
                                 <div class="carousel-item {% if character.profile_image == 'elf_assassin_f' %} active {% endif %}">
                                     <img src="/static/images/profiles/elf_assassin_f.jpg" class="d-block w-100"
                                         alt="New Profile Image 1">
@@ -331,13 +317,6 @@
                         <label class="input-group-text" for="profileImageSelect">Choose</label>
 
                         <select name="profile_image" class="custom-select" id="profileImageSelect" required>
-
-                            <!-- Attempt to loop through profile images -->
-                            <!-- {% for image in newCharacterImages %}
-                            
-                            <option {% if image.profile_image == character.profile_image %} selected {% endif %} value="{{ image.name }}">Profile Image {{ loop.index }}</option>
-
-                            {% endfor %} -->
 
                             <option {% if character.profile_image == 'elf_assassin_f' %} selected {% endif %} value="elf_assassin_f">Profile Image 1</option>
 
