@@ -1,10 +1,10 @@
-# **ORIGINAL FANTASY GAME&trade; **
+# **ORIGINAL FANTASY GAME&trade;**
 
 ![Original Fantasy Game Banner Logo](static/images/misc/banner_1.png "Original Fantasy Game Banner Logo")
 
 ## **Introduction**
 
-This is the repository for the **ORIGINAL FANTASY GAME&trade; ** website.
+This is the repository for the **ORIGINAL FANTASY GAME&trade;** website.
 
 The deployed site can be visited by clicking [**here**](https://pq-original-fantasy-game.herokuapp.com/).
 
